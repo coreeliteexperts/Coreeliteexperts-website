@@ -6,9 +6,9 @@ import heroBg from '@/assets/hero-bg.jpg';
 
 const words = [
   { text: 'We', number: '01' },
-  { text: 'Create', number: '02' },
-  { text: 'Digital', number: '03' },
-  { text: 'Products', number: '04', accent: true },
+  { text: 'Deliver', number: '02' },
+  { text: 'Innovative', number: '03' },
+  { text: 'Solutions', number: '04', accent: true },
 ];
 
 export const HeroSection = () => {
@@ -178,7 +178,7 @@ export const HeroSection = () => {
       >
         <span className="text-xs font-mono text-muted-foreground">{currentTime}</span>
         <div className="w-px h-12 bg-foreground/20" />
-        <span className="text-xs font-mono text-muted-foreground">EST</span>
+        <span className="text-xs font-mono text-muted-foreground">PST</span>
       </motion.div>
 
       {/* Main content */}
@@ -200,7 +200,7 @@ export const HeroSection = () => {
               transition={{ duration: 1, delay: 0.7 }}
             />
             <span className="text-xs sm:text-sm font-mono text-muted-foreground tracking-wider">
-              DIGITAL AGENCY — SINCE 2018
+              IT Company — SINCE 2024
             </span>
           </motion.div>
 
@@ -233,7 +233,7 @@ export const HeroSection = () => {
                     </motion.span>
                     
                     <span 
-                      className={`font-syne font-black text-[11vw] sm:text-6xl md:text-7xl lg:text-8xl xl:text-[120px] tracking-tight leading-[1] ${
+                      className={`font-syne font-black text-[11vw] sm:text-6xl md:text-7xl lg:text-8xl xl:text-[120px] tracking-tight  leading-[1] ${
                         word.accent ? 'text-accent' : 'text-foreground'
                       }`}
                     >
@@ -261,8 +261,8 @@ export const HeroSection = () => {
               className="max-w-md"
             >
               <p className="text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed">
-                A creative studio crafting immersive digital products, brands, 
-                and experiences that captivate and inspire.
+                A modern IT company delivering reliable software, 
+                web solutions, and digital technologies that help businesses grow and succeed.
               </p>
             </motion.div>
 
