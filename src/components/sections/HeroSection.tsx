@@ -102,7 +102,7 @@ export const HeroSection = () => {
       
       {/* Floating orb - hidden on mobile for performance */}
       <motion.div
-        className="absolute w-[300px] h-[300px] md:w-[600px] md:h-[600px] rounded-none bg-accent/10 blur-[80px] md:blur-[120px] hidden sm:block"
+        className="absolute w-[300px] h-[300px] md:w-[600px] md:h-[600px] rounded-none bg-[#0ebab1]/10 blur-[80px] md:blur-[120px] hidden sm:block"
         style={{ 
           x: springX, 
           y: springY,
@@ -136,7 +136,7 @@ export const HeroSection = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 2, delay: 1 }}
-        className="absolute top-[60%] left-[20%] w-2 h-2 bg-accent rounded-none hidden md:block"
+        className="absolute top-[60%] left-[20%] w-2 h-2 bg-[#0ebab1] rounded-none hidden md:block"
         style={{
           x: mousePosition.x * 4,
           y: mousePosition.y * 4,
@@ -194,7 +194,7 @@ export const HeroSection = () => {
             className="flex items-center gap-3 sm:gap-4 mb-6 sm:mb-8 md:mb-12"
           >
             <motion.div 
-              className="h-px bg-accent flex-shrink-0"
+              className="h-px bg-[#0ebab1] flex-shrink-0"
               initial={{ width: 0 }}
               animate={{ width: 40 }}
               transition={{ duration: 1, delay: 0.7 }}
@@ -224,7 +224,7 @@ export const HeroSection = () => {
                     className="flex items-baseline gap-2 sm:gap-4"
                   >
                     <motion.span 
-                      className="text-xs sm:text-sm font-mono text-accent/60 hidden sm:inline-block"
+                      className="text-xs sm:text-sm font-mono text-[#0ebab1]/60 hidden sm:inline-block"
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       transition={{ delay: 1 + index * 0.15, duration: 0.5 }}
@@ -293,7 +293,7 @@ export const HeroSection = () => {
                     </svg>
                   </motion.div>
                   <motion.div
-                    className="absolute inset-0 bg-accent"
+                    className="absolute inset-0 bg-[#0ebab1]"
                     initial={{ y: '100%' }}
                     whileHover={{ y: 0 }}
                     transition={{ duration: 0.3, ease: [0.19, 1, 0.22, 1] }}
@@ -304,11 +304,11 @@ export const HeroSection = () => {
               <MagneticButton>
                 <Link 
                   to="/contact" 
-                  className="group relative inline-flex items-center justify-center gap-3 px-6 sm:px-8 py-3 sm:py-4 border border-foreground/20 text-foreground font-semibold rounded-full overflow-hidden hover:border-accent/50 transition-colors duration-300 text-sm sm:text-base w-full sm:w-auto"
+                  className="group relative inline-flex items-center justify-center gap-3 px-6 sm:px-8 py-3 sm:py-4 border border-foreground/20 text-foreground font-semibold rounded-full overflow-hidden hover:border-[#0ebab1]/50 transition-colors duration-300 text-sm sm:text-base w-full sm:w-auto"
                 >
                   <span className="relative z-10">Start a Project</span>
                   <motion.span 
-                    className="relative z-10 text-accent"
+                    className="relative z-10 text-[#0ebab1]"
                     animate={{ x: [0, 5, 0] }}
                     transition={{ duration: 1.5, repeat: Infinity }}
                   >
@@ -340,7 +340,7 @@ export const HeroSection = () => {
                   transition={{ delay: 2.2 + i * 0.1, duration: 0.5 }}
                   className="group"
                 >
-                  <div className="text-2xl sm:text-3xl md:text-4xl font-syne font-bold text-foreground group-hover:text-accent transition-colors duration-300">
+                  <div className="text-2xl sm:text-3xl md:text-4xl font-syne font-bold text-foreground group-hover:text-[#0ebab1] transition-colors duration-300">
                     {stat.number}
                   </div>
                   <div className="text-xs sm:text-sm text-muted-foreground mt-1">{stat.label}</div>
