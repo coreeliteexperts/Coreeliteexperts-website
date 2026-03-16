@@ -7,6 +7,7 @@ import SearchInput from '@/components/SearchInput';
 import NewsletterForm from '@/components/NewsletterForm';
 import Footer from '@/components/Footer';
 import Navigation from '@/components/Navigation';
+import SEO from '@/components/SEO';
 
 const categories = ['All', ...Array.from(new Set(blogPosts.map(p => p.category)))];
 
@@ -54,6 +55,7 @@ const Blog = () => {
 
   return (
       <div className="min-h-screen bg-background" onMouseMove={handleMouseMove}>
+        <SEO title="Blog" />
         <Navigation />
 
         {/* Hero Section */}
