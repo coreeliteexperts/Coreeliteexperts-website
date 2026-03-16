@@ -122,7 +122,7 @@ export const Navigation = () => {
               
               {/* Glow effect on hover */}
               <motion.div 
-                className="absolute -inset-4 bg-accent/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"
+                className="absolute -inset-4 bg-[#0ebab1]/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"
               />
             </Link>
 
@@ -135,8 +135,15 @@ export const Navigation = () => {
               {/* Cursor follower glow */}
               {hoveredIndex !== null && (
                 <motion.div
-                  className="absolute w-24 h-24 bg-accent/20 rounded-full blur-2xl pointer-events-none -z-10"
-                  style={{ x: springX, y: springY, translateX: '-50%', translateY: '-50%' }}
+                  className="absolute w-24 h-24 rounded-full blur-2xl pointer-events-none -z-10"
+                  style={{ 
+                    x: springX, 
+                    y: springY, 
+                    translateX: '-50%', 
+                    translateY: '-50%',
+                    backgroundColor: '#0ebab1',
+                    opacity: 0.2,
+                  }}
                 />
               )}
               
@@ -152,7 +159,7 @@ export const Navigation = () => {
                     <motion.span 
                       className={`absolute -top-1 left-3 text-[10px] font-mono transition-all duration-300 ${
                         hoveredIndex === index || isActiveLink(link.href) 
-                          ? 'text-accent opacity-100' 
+                          ? 'text-[#0ebab1] opacity-100' 
                           : 'text-muted-foreground/40 opacity-0'
                       }`}
                       initial={{ y: 5 }}
@@ -169,7 +176,7 @@ export const Navigation = () => {
                       <motion.span 
                         className={`block text-sm font-medium tracking-wide transition-colors duration-300 ${
                           isActiveLink(link.href) 
-                            ? 'text-accent' 
+                            ? 'text-[#0ebab1]' 
                             : 'text-foreground/70 group-hover:text-foreground'
                         }`}
                         animate={{ 
@@ -183,7 +190,7 @@ export const Navigation = () => {
                     
                     {/* Animated underline */}
                     <motion.div 
-                      className="absolute bottom-2 left-5 right-5 h-px bg-accent origin-left"
+                      className="absolute bottom-2 left-5 right-5 h-px bg-[#0ebab1] origin-left"
                       initial={{ scaleX: 0 }}
                       animate={{ 
                         scaleX: isActiveLink(link.href) ? 1 : hoveredIndex === index ? 1 : 0 
@@ -208,7 +215,7 @@ export const Navigation = () => {
                     <motion.div
                       className="absolute inset-0 rounded-full"
                       style={{
-                        background: 'conic-gradient(from 0deg, transparent, hsl(var(--accent)), transparent)',
+                        background: 'conic-gradient(from 0deg, transparent, #0ebab1, transparent)',
                         padding: '2px',
                       }}
                       animate={{ rotate: 360 }}
@@ -219,7 +226,7 @@ export const Navigation = () => {
                     
                     {/* Animated arrow */}
                     <motion.div
-                      className="relative z-10 w-5 h-5 rounded-full bg-background/20 flex items-center justify-center"
+                      className="relative z-10 w-5 h-5 rounded-full bg-background/20 group-hover:bg-[#0ebab1]/30 flex items-center justify-center transition-colors duration-300"
                       whileHover={{ scale: 1.2 }}
                     >
                       <motion.svg
@@ -241,7 +248,7 @@ export const Navigation = () => {
                     
                     {/* Hover background */}
                     <motion.div
-                      className="absolute inset-0 bg-accent -z-0"
+                      className="absolute inset-0 bg-[#0ebab1] -z-0"
                       initial={{ y: '100%' }}
                       whileHover={{ y: 0 }}
                       transition={{ duration: 0.3, ease: [0.19, 1, 0.22, 1] }}
@@ -293,7 +300,7 @@ export const Navigation = () => {
                   className="absolute inset-0 rounded-full border border-foreground/20"
                   animate={{ 
                     scale: isMobileMenuOpen ? 1.1 : 1,
-                    borderColor: isMobileMenuOpen ? 'hsl(var(--accent))' : 'hsl(var(--foreground) / 0.2)'
+                    borderColor: isMobileMenuOpen ? '#0ebab1' : 'hsl(var(--foreground) / 0.2)'
                   }}
                   transition={{ duration: 0.3 }}
                 />
@@ -379,7 +386,7 @@ export const Navigation = () => {
             
             {/* Floating accent orb */}
             <motion.div
-              className="absolute w-[300px] h-[300px] rounded-full bg-accent/10 blur-3xl"
+              className="absolute w-[300px] h-[300px] rounded-full bg-[#0ebab1]/10 blur-3xl"
               initial={{ x: '100%', y: '100%', opacity: 0 }}
               animate={{ x: '-20%', y: '20%', opacity: 1 }}
               exit={{ x: '100%', y: '100%', opacity: 0 }}
@@ -405,7 +412,7 @@ export const Navigation = () => {
                     >
                       {/* Number */}
                       <span className={`text-sm font-mono transition-colors duration-300 ${
-                        isActiveLink(link.href) ? 'text-accent' : 'text-muted-foreground/50 group-hover:text-accent'
+                        isActiveLink(link.href) ? 'text-[#0ebab1]' : 'text-muted-foreground/50 group-hover:text-[#0ebab1]'
                       }`}>
                         {link.number}
                       </span>
@@ -413,7 +420,7 @@ export const Navigation = () => {
                       {/* Link text */}
                       <span className={`text-4xl sm:text-5xl font-syne font-bold tracking-tight transition-all duration-300 ${
                         isActiveLink(link.href) 
-                          ? 'text-accent' 
+                          ? 'text-[#0ebab1]' 
                           : 'text-foreground/80 group-hover:text-foreground group-hover:translate-x-2'
                       }`}>
                         {link.name}
@@ -425,7 +432,7 @@ export const Navigation = () => {
                         height="24"
                         viewBox="0 0 24 24"
                         fill="none"
-                        className="ml-auto text-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                        className="ml-auto text-[#0ebab1] opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                         initial={{ x: -10 }}
                         whileHover={{ x: 0 }}
                       >
@@ -452,7 +459,7 @@ export const Navigation = () => {
               >
                 <div className="text-sm text-muted-foreground">
                   <p>Ready to start a project?</p>
-                  <a href="mailto:hello@studio.design" className="text-foreground hover:text-accent transition-colors">
+                  <a href="mailto:hello@studio.design" className="text-foreground hover:text-[#0ebab1] transition-colors">
                     hello@studio.design
                   </a>
                 </div>
@@ -460,7 +467,7 @@ export const Navigation = () => {
                 <Link
                   to="/contact"
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="group inline-flex items-center gap-3 px-6 py-3 bg-accent text-accent-foreground font-semibold rounded-full"
+                  className="group inline-flex items-center gap-3 px-6 py-3 bg-[#0ebab1] text-accent-foreground font-semibold rounded-full"
                 >
                   Start a Project
                   <motion.div
