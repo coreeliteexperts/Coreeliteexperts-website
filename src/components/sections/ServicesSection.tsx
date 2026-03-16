@@ -65,13 +65,13 @@ const ServiceCard = ({ service, index, activeIndex, setActiveIndex }: ServiceCar
     >
       <div className={`relative h-full p-8 md:p-10 border transition-all duration-500 flex flex-col ${
         isActive 
-          ? 'bg-accent/5 border-accent/30' 
+          ? 'bg-[#0ebab1]/5 border-[#0ebab1]/30' 
           : 'bg-card/30 border-border/50 hover:border-border'
       }`}>
         {/* Number */}
         <motion.span 
           className={`absolute top-4 right-4 text-xs font-mono transition-colors duration-300 ${
-            isActive ? 'text-accent' : 'text-muted-foreground/40'
+            isActive ? 'text-[#0ebab1]' : 'text-muted-foreground/40'
           }`}
           animate={{ opacity: isActive ? 1 : 0.4 }}
         >
@@ -88,10 +88,10 @@ const ServiceCard = ({ service, index, activeIndex, setActiveIndex }: ServiceCar
                   className="w-14 h-14 flex items-center justify-center mb-6 relative"
                 >
                   <div className={`absolute inset-0 rounded-none border transition-all duration-300 ${
-                    isActive ? 'border-accent bg-accent/10' : 'border-border'
+                    isActive ? 'border-[#0ebab1] bg-[#0ebab1]/10' : 'border-border'
                   }`} />
                   <Icon className={`w-7 h-7 relative z-10 transition-colors duration-300 ${
-                    isActive ? 'text-accent' : 'text-foreground/70'
+                    isActive ? 'text-[#0ebab1]' : 'text-foreground/70'
                   }`} strokeWidth={1.5} />
                 </motion.div>
 
@@ -108,7 +108,7 @@ const ServiceCard = ({ service, index, activeIndex, setActiveIndex }: ServiceCar
 
                 {/* Bottom line */}
                 <motion.div
-                  className="absolute bottom-0 left-0 right-0 h-0.5 bg-accent origin-left"
+                  className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#0ebab1] origin-left"
                   initial={{ scaleX: 0 }}
                   animate={{ scaleX: isActive ? 1 : 0 }}
                   transition={{ duration: 0.4, ease: [0.19, 1, 0.22, 1] }}
@@ -116,7 +116,7 @@ const ServiceCard = ({ service, index, activeIndex, setActiveIndex }: ServiceCar
         
                 {/* Corner accent */}
                 <motion.div
-                  className="absolute top-0 left-0 w-8 h-8 border-l-2 border-t-2 border-accent"
+                  className="absolute top-0 left-0 w-8 h-8 border-l-2 border-t-2 border-[#0ebab1]"
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: isActive ? 1 : 0, scale: isActive ? 1 : 0.8 }}
                   transition={{ duration: 0.3 }}
@@ -129,7 +129,7 @@ const ServiceCard = ({ service, index, activeIndex, setActiveIndex }: ServiceCar
                   animate={{ opacity: isActive ? 1 : 0, x: isActive ? 0 : -10 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-accent">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-[#0ebab1]">
                     <path
                       d="M7 17L17 7M17 7H7M17 7V17"
                       stroke="currentColor"
@@ -167,12 +167,12 @@ const ServiceCard = ({ service, index, activeIndex, setActiveIndex }: ServiceCar
         
               {/* Floating shapes */}
               <motion.div
-                className="absolute top-20 right-20 w-32 h-32 border border-accent/20 rounded-none"
+                className="absolute top-20 right-20 w-32 h-32 border border-[#0ebab1]/20 rounded-none"
                 animate={{ rotate: 360 }}
                 transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
               />
               <motion.div
-                className="absolute bottom-40 left-10 w-4 h-4 bg-accent/30 rounded-none"
+                className="absolute bottom-40 left-10 w-4 h-4 bg-[#0ebab1]/30 rounded-none"
                 animate={{ y: [-20, 20, -20], rotate: [0, 45, 0] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
               />
@@ -186,8 +186,8 @@ const ServiceCard = ({ service, index, activeIndex, setActiveIndex }: ServiceCar
               transition={{ duration: 0.8 }}
               className="flex items-center gap-4 mb-8"
             >
-              <span className="text-sm font-mono text-accent">02</span>
-              <div className="h-px w-12 bg-accent" />
+              <span className="text-sm font-mono text-[#0ebab1]">02</span>
+              <div className="h-px w-12 bg-[#0ebab1]" />
               <span className="text-sm font-mono text-muted-foreground tracking-wider">WHAT WE DO</span>
             </motion.div>
 
