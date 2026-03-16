@@ -165,7 +165,7 @@ export const AboutSection = () => {
               className="absolute -left-6 bottom-12 bg-background border border-border px-6 py-4 shadow-xl"
             >
               <span className="text-xs font-mono text-muted-foreground">ESTABLISHED</span>
-              <span className="block font-syne font-bold text-3xl mt-1">2019</span>
+              <span className="block font-syne font-bold text-3xl mt-1">2024</span>
             </motion.div>
 
             {/* Side label */}
