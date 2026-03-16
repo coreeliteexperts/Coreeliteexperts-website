@@ -1,13 +1,13 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
 import { AnimatedLine } from '@/components/AnimatedText';
-import { Palette, Code, Megaphone, Lightbulb, BarChart3, Globe } from 'lucide-react';
+import { Infinity as InfinityIcon, Code, Megaphone, Lightbulb, BarChart3, Globe, Play, Calculator, Palette } from 'lucide-react';
 
 const services = [
   {
-    icon: Palette,
-    title: 'Brand Identity',
-    description: 'Creating distinctive visual identities that capture essence and resonate with audiences.',
+    icon: InfinityIcon,
+    title: 'DevOps Engineering',
+    description: 'Automating deployment, infrastructure, and CI/CD pipelines for reliable, scalable systems.',
     number: '01',
   },
   {
@@ -23,21 +23,21 @@ const services = [
     number: '03',
   },
   {
-    icon: Lightbulb,
-    title: 'Creative Direction',
-    description: 'Guiding vision from concept to execution with purpose and precision.',
+    icon: Play,
+    title: 'Video Editing',
+    description: 'Professional video editing and post-production to bring your content to life.',
     number: '04',
   },
   {
-    icon: BarChart3,
-    title: 'Data Analytics',
-    description: 'Transforming insights into actionable strategies for continuous improvement.',
+    icon: Calculator,
+    title: 'Bookkeeping and Accounts',
+    description: 'Accurate bookkeeping and accounts management to keep your finances organized and compliant.',
     number: '05',
   },
   {
-    icon: Globe,
-    title: 'Global Strategy',
-    description: 'Expanding reach across markets with culturally aware, localized approaches.',
+    icon: Palette,
+    title: 'UI/UX Designing',
+    description: 'User-centered interfaces and experiences that are intuitive, accessible, and delightful.',
     number: '06',
   },
 ];
