@@ -3,9 +3,9 @@ import { useRef, useState } from 'react';
 import { AnimatedLine } from '@/components/AnimatedText';
 
 const stats = [
-  { number: '150+', label: 'Projects', description: 'Successfully delivered' },
-  { number: '12', label: 'Awards', description: 'Industry recognition' },
-  { number: '98%', label: 'Happy Clients', description: 'Satisfaction rate' },
+  { number: '350+', label: 'Projects', description: 'Successfully delivered' },
+  { number: '2', label: 'Awards', description: 'Industry recognition' },
+  { number: '99%', label: 'Happy Clients', description: 'Satisfaction rate' },
 ];
 
 export const AboutSection = () => {
@@ -54,7 +54,7 @@ export const AboutSection = () => {
 
       {/* Floating accent orb */}
       <motion.div
-        className="absolute w-[400px] h-[400px] rounded-full bg-accent/5 blur-[100px] pointer-events-none"
+        className="absolute w-[400px] h-[400px] rounded-full bg-[#0ebab1]/5 blur-[100px] pointer-events-none"
         style={{
           x: mousePosition.x * 2,
           y: mousePosition.y * 2,
@@ -74,31 +74,27 @@ export const AboutSection = () => {
               transition={{ duration: 0.8 }}
               className="flex items-center gap-4 mb-8"
             >
-              <span className="text-sm font-mono text-accent">01</span>
-              <div className="h-px w-12 bg-accent" />
+              <span className="text-sm font-mono text-[#0ebab1]">01</span>
+              <div className="h-px w-12 bg-[#0ebab1]" />
               <span className="text-sm font-mono text-muted-foreground tracking-wider">ABOUT US</span>
             </motion.div>
 
             <AnimatedLine delay={0.2}>
               <h2 className="font-syne font-bold text-4xl sm:text-5xl md:text-6xl tracking-tight mb-8 leading-[1.1]">
-                We are a team of creative minds & craftsmen.
+                We are a team of creative minds & problem solvers.
               </h2>
             </AnimatedLine>
 
             <div className="space-y-6 mb-10">
               <AnimatedLine delay={0.4}>
                 <p className="text-lg text-muted-foreground leading-relaxed max-w-xl">
-                  Founded in 2019, our studio has been at the forefront of digital innovation. 
-                  We blend strategy, creativity, and technology to build experiences that 
-                  resonate with audiences and drive meaningful results.
+                  Founded in 2024 with a simple yet powerful vision: to empower businesses with innovative digital solutions that drive real results.
                 </p>
               </AnimatedLine>
 
               <AnimatedLine delay={0.5}>
                 <p className="text-muted-foreground leading-relaxed max-w-xl">
-                  Our approach is rooted in collaboration. We work closely with brands 
-                  to understand their vision, challenge conventions, and create work 
-                  that stands apart in today's crowded digital landscape.
+                  Over the years, we've worked with startups, mid-size companies, and large enterprises across various industries. Each project has taught us something new, and every client relationship has strengthened our commitment to excellence.
                 </p>
               </AnimatedLine>
             </div>
@@ -118,8 +114,8 @@ export const AboutSection = () => {
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ delay: 0.7 + i * 0.1 }}
                 >
-                  <div className="pl-4 border-l-2 border-accent/30 group-hover:border-accent transition-colors duration-300">
-                    <span className="font-syne font-bold text-3xl md:text-4xl text-foreground group-hover:text-accent transition-colors duration-300 block mb-1">
+                  <div className="pl-4 border-l-2 border-[#0ebab1]/30 group-hover:border-[#0ebab1] transition-colors duration-300">
+                    <span className="font-syne font-bold text-3xl md:text-4xl text-foreground group-hover:text-[#0ebab1] transition-colors duration-300 block mb-1">
                       {stat.number}
                     </span>
                     <span className="block text-sm font-medium text-foreground mb-1">{stat.label}</span>
@@ -130,7 +126,7 @@ export const AboutSection = () => {
           </div>
 
           {/* Image with unique frame */}
-          <motion.div
+            <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={isInView ? { opacity: 1, scale: 1 } : {}}
             transition={{ duration: 1, delay: 0.3 }}
@@ -142,7 +138,7 @@ export const AboutSection = () => {
           >
             {/* Decorative frame */}
             <motion.div 
-              className="absolute -top-4 -right-4 w-full h-full border border-accent/30"
+              className="absolute -top-4 -right-4 w-full h-full border border-[#0ebab1]/30"
               initial={{ opacity: 0, x: 20, y: -20 }}
               animate={isInView ? { opacity: 1, x: 0, y: 0 } : {}}
               transition={{ delay: 0.6, duration: 0.8 }}
@@ -157,8 +153,8 @@ export const AboutSection = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
               
               {/* Corner decorations */}
-              <div className="absolute top-4 left-4 w-8 h-8 border-l-2 border-t-2 border-accent/50" />
-              <div className="absolute bottom-4 right-4 w-8 h-8 border-r-2 border-b-2 border-accent/50" />
+              <div className="absolute top-4 left-4 w-8 h-8 border-l-2 border-t-2 border-[#0ebab1]/50" />
+              <div className="absolute bottom-4 right-4 w-8 h-8 border-r-2 border-b-2 border-[#0ebab1]/50" />
             </div>
             
             {/* Floating badge */}
