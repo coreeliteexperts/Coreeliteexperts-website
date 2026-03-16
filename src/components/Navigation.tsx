@@ -2,6 +2,7 @@ import { useRef, useState, useEffect } from 'react';
 import { motion, AnimatePresence, useMotionValue, useSpring } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom';
 import MagneticButton from './MagneticButton';
+import logo from '@/assets/logo.svg';
 
 const navLinks = [
   { name: 'Work', href: '/work', number: '01' },
@@ -86,27 +87,18 @@ export const Navigation = () => {
             isScrolled ? 'px-6 py-3' : 'py-6 md:py-8'
           }`}>
             
-            {/* Logo - Animated morphing design */}
+            {/* Logo */}
             <Link to="/" className="group relative">
               <motion.div
                 className="flex items-center gap-2"
                 whileHover={{ scale: 1.02 }}
                 transition={{ type: "spring", stiffness: 400, damping: 17 }}
               >
-                {/* Animated logo mark */}
-                <motion.div 
-                  className="relative w-10 h-10 flex items-center justify-center"
-                  whileHover={{ rotate: 90 }}
-                  transition={{ duration: 0.4, ease: [0.19, 1, 0.22, 1] }}
-                >
-                  <motion.div 
-                    className="absolute inset-0 border-2 border-foreground rounded-lg"
-                    whileHover={{ borderRadius: "50%" }}
-                    transition={{ duration: 0.3 }}
-                  />
-                  <span className="font-syne font-black text-lg">C</span>
-                </motion.div>
-                
+                <img
+                  src={logo}
+                  alt="CoreEliteExperts"
+                  className="h-10 w-auto"
+                />
                 {/* Logo text - only on desktop */}
                 <div className="hidden sm:block overflow-hidden">
                   <motion.span 

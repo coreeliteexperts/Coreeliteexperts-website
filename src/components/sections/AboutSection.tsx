@@ -1,6 +1,7 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
 import { AnimatedLine } from '@/components/AnimatedText';
+import aboutUsImage from '@/assets/aboutus.jpeg';
 
 const stats = [
   { number: '350+', label: 'Projects', description: 'Successfully delivered' },
@@ -146,7 +147,7 @@ export const AboutSection = () => {
             
             <div className="relative aspect-[4/5] overflow-hidden bg-secondary">
               <img
-                src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&w=1200&q=80"
+                src={aboutUsImage}
                 alt="Creative team at work"
                 className="w-full h-full object-cover"
               />
@@ -177,7 +178,7 @@ export const AboutSection = () => {
               style={{ writingMode: 'vertical-rl', textOrientation: 'mixed' }}
             >
               <span className="text-xs font-mono text-muted-foreground tracking-widest">
-                CRAFTING DIGITAL EXPERIENCES
+                CORE ELITE EXPERTS
               </span>
             </motion.div>
           </motion.div>

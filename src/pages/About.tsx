@@ -5,6 +5,7 @@ import { ArrowRight, Linkedin, Twitter } from 'lucide-react';
 import Footer from '@/components/Footer';
 import MagneticButton from '@/components/MagneticButton';
 import Navigation from '@/components/Navigation';
+import SEO from '@/components/SEO';
 
 const teamMembers = [
   {
@@ -121,6 +122,7 @@ const About = () => {
 
   return (
       <div className="min-h-screen bg-background" onMouseMove={handleMouseMove}>
+        <SEO title="About" />
         <Navigation />
 
         {/* Hero Section */}
