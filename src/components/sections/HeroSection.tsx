@@ -328,10 +328,10 @@ export const HeroSection = () => {
           >
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
               {[
-                { number: '150+', label: 'Projects Completed' },
-                { number: '50+', label: 'Happy Clients' },
-                { number: '12', label: 'Team Members' },
-                { number: '6+', label: 'Years Experience' },
+                { number: '350+', label: 'Projects Completed' },
+                { number: '150+', label: 'Happy Clients' },
+                { number: '30', label: 'Team Members' },
+                { number: '2+', label: 'Years Execellence' },
               ].map((stat, i) => (
                 <motion.div 
                   key={stat.label}
