@@ -5,7 +5,6 @@ import { ArrowRight, Check } from 'lucide-react';
 import Footer from '@/components/Footer';
 import MagneticButton from '@/components/MagneticButton';
 import Navigation from '@/components/Navigation';
-import SEO from '@/components/SEO';
 
 const services = [
   {
@@ -114,7 +113,6 @@ const Services = () => {
 
   return (
       <div className="min-h-screen bg-background" onMouseMove={handleMouseMove}>
-        <SEO title="Services" />
         <Navigation />
 
         {/* Hero Section */}
