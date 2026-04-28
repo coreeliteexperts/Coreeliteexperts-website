@@ -5,6 +5,10 @@ import { projects } from '@/data/projects';
 import SearchInput from '@/components/SearchInput';
 import Footer from '@/components/Footer';
 import Navigation from '@/components/Navigation';
+<<<<<<< HEAD
+=======
+import SEO from '@/components/SEO';
+>>>>>>> 7c6e6f579ba207e704c9eab6e4162ce69d9c7df9
 import { ArrowUpRight, ArrowRight, Search } from 'lucide-react';
 import MagneticButton from '@/components/MagneticButton';
 
@@ -126,6 +130,10 @@ const Projects = () => {
 
   return (
     <div className="min-h-screen bg-background" onMouseMove={handleMouseMove}>
+<<<<<<< HEAD
+=======
+      <SEO title="Work" />
+>>>>>>> 7c6e6f579ba207e704c9eab6e4162ce69d9c7df9
       <Navigation />
 
       {/* Hero Section */}

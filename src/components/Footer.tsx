@@ -45,6 +45,7 @@ export const Footer = () => {
          <div className="lg:col-span-1 border-r border-border p-8 lg:p-12 flex flex-col justify-between min-h-[400px] lg:min-h-[600px]">
             <div>
                <Link to="/" className="inline-block mb-12">
+<<<<<<< HEAD
                  <div className="flex items-center">
                    <img
                      src="/logo-cee.png"
@@ -53,6 +54,11 @@ export const Footer = () => {
                      draggable={false}
                    />
                  </div>
+=======
+                 <span className="font-syne text-4xl font-bold tracking-tighter">
+                   STUDIO<span className="text-accent">.</span>
+                 </span>
+>>>>>>> 7c6e6f579ba207e704c9eab6e4162ce69d9c7df9
                </Link>
                <p className="text-muted-foreground font-mono text-sm leading-relaxed max-w-[200px]">
                   Crafting digital experiences that defy the ordinary.
@@ -149,7 +155,11 @@ export const Footer = () => {
       {/* Bottom Legal Bar */}
       <div className="border-t border-border p-6 flex flex-col md:flex-row justify-between items-center gap-4 bg-background">
          <p className="text-xs font-mono text-muted-foreground uppercase">
+<<<<<<< HEAD
             © {new Date().getFullYear()} CEE.
+=======
+            © {new Date().getFullYear()} Studio Agency.
+>>>>>>> 7c6e6f579ba207e704c9eab6e4162ce69d9c7df9
          </p>
          <div className="flex gap-8">
             {footerLinks.legal.map((link) => (
