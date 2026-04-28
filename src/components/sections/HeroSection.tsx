@@ -6,9 +6,9 @@ import heroBg from '@/assets/hero-bg.jpg';
 
 const words = [
   { text: 'We', number: '01' },
-  { text: 'Deliver', number: '02' },
-  { text: 'Innovative', number: '03' },
-  { text: 'Solutions', number: '04', accent: true },
+  { text: 'Create', number: '02' },
+  { text: 'Digital', number: '03' },
+  { text: 'Products', number: '04', accent: true },
 ];
 
 export const HeroSection = () => {
@@ -102,7 +102,7 @@ export const HeroSection = () => {
       
       {/* Floating orb - hidden on mobile for performance */}
       <motion.div
-        className="absolute w-[300px] h-[300px] md:w-[600px] md:h-[600px] rounded-none bg-[#0ebab1]/10 blur-[80px] md:blur-[120px] hidden sm:block"
+        className="absolute w-[300px] h-[300px] md:w-[600px] md:h-[600px] rounded-none bg-accent/10 blur-[80px] md:blur-[120px] hidden sm:block"
         style={{ 
           x: springX, 
           y: springY,
@@ -136,7 +136,7 @@ export const HeroSection = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 2, delay: 1 }}
-        className="absolute top-[60%] left-[20%] w-2 h-2 bg-[#0ebab1] rounded-none hidden md:block"
+        className="absolute top-[60%] left-[20%] w-2 h-2 bg-accent rounded-none hidden md:block"
         style={{
           x: mousePosition.x * 4,
           y: mousePosition.y * 4,
@@ -178,7 +178,7 @@ export const HeroSection = () => {
       >
         <span className="text-xs font-mono text-muted-foreground">{currentTime}</span>
         <div className="w-px h-12 bg-foreground/20" />
-        <span className="text-xs font-mono text-muted-foreground">PST</span>
+        <span className="text-xs font-mono text-muted-foreground">EST</span>
       </motion.div>
 
       {/* Main content */}
@@ -194,13 +194,13 @@ export const HeroSection = () => {
             className="flex items-center gap-3 sm:gap-4 mb-6 sm:mb-8 md:mb-12"
           >
             <motion.div 
-              className="h-px bg-[#0ebab1] flex-shrink-0"
+              className="h-px bg-accent flex-shrink-0"
               initial={{ width: 0 }}
               animate={{ width: 40 }}
               transition={{ duration: 1, delay: 0.7 }}
             />
             <span className="text-xs sm:text-sm font-mono text-muted-foreground tracking-wider">
-              IT Company — SINCE 2024
+              DIGITAL AGENCY — SINCE 2018
             </span>
           </motion.div>
 
@@ -224,7 +224,7 @@ export const HeroSection = () => {
                     className="flex items-baseline gap-2 sm:gap-4"
                   >
                     <motion.span 
-                      className="text-xs sm:text-sm font-mono text-[#0ebab1]/60 hidden sm:inline-block"
+                      className="text-xs sm:text-sm font-mono text-accent/60 hidden sm:inline-block"
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       transition={{ delay: 1 + index * 0.15, duration: 0.5 }}
@@ -233,8 +233,9 @@ export const HeroSection = () => {
                     </motion.span>
                     
                     <span 
-                      className="font-syne font-black text-[11vw] sm:text-6xl md:text-7xl lg:text-8xl xl:text-[120px] tracking-tight  leading-[1] text-foreground"
-                      style={word.accent ? { color: '#0ebab1' } : undefined}
+                      className={`font-syne font-black text-[11vw] sm:text-6xl md:text-7xl lg:text-8xl xl:text-[120px] tracking-tight leading-[1] ${
+                        word.accent ? 'text-accent' : 'text-foreground'
+                      }`}
                     >
                       {word.text}
                     </span>
@@ -260,8 +261,8 @@ export const HeroSection = () => {
               className="max-w-md"
             >
               <p className="text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed">
-                A modern IT company delivering reliable software, 
-                web solutions, and digital technologies that help businesses grow and succeed.
+                A creative studio crafting immersive digital products, brands, 
+                and experiences that captivate and inspire.
               </p>
             </motion.div>
 
@@ -293,7 +294,7 @@ export const HeroSection = () => {
                     </svg>
                   </motion.div>
                   <motion.div
-                    className="absolute inset-0 bg-[#0ebab1]"
+                    className="absolute inset-0 bg-accent"
                     initial={{ y: '100%' }}
                     whileHover={{ y: 0 }}
                     transition={{ duration: 0.3, ease: [0.19, 1, 0.22, 1] }}
@@ -304,11 +305,11 @@ export const HeroSection = () => {
               <MagneticButton>
                 <Link 
                   to="/contact" 
-                  className="group relative inline-flex items-center justify-center gap-3 px-6 sm:px-8 py-3 sm:py-4 border border-foreground/20 text-foreground font-semibold rounded-full overflow-hidden hover:border-[#0ebab1]/50 transition-colors duration-300 text-sm sm:text-base w-full sm:w-auto"
+                  className="group relative inline-flex items-center justify-center gap-3 px-6 sm:px-8 py-3 sm:py-4 border border-foreground/20 text-foreground font-semibold rounded-full overflow-hidden hover:border-accent/50 transition-colors duration-300 text-sm sm:text-base w-full sm:w-auto"
                 >
                   <span className="relative z-10">Start a Project</span>
                   <motion.span 
-                    className="relative z-10 text-[#0ebab1]"
+                    className="relative z-10 text-accent"
                     animate={{ x: [0, 5, 0] }}
                     transition={{ duration: 1.5, repeat: Infinity }}
                   >
@@ -328,10 +329,10 @@ export const HeroSection = () => {
           >
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
               {[
-                { number: '350+', label: 'Projects Completed' },
-                { number: '150+', label: 'Happy Clients' },
-                { number: '30', label: 'Team Members' },
-                { number: '2+', label: 'Years Execellence' },
+                { number: '150+', label: 'Projects Completed' },
+                { number: '50+', label: 'Happy Clients' },
+                { number: '12', label: 'Team Members' },
+                { number: '6+', label: 'Years Experience' },
               ].map((stat, i) => (
                 <motion.div 
                   key={stat.label}
@@ -340,7 +341,7 @@ export const HeroSection = () => {
                   transition={{ delay: 2.2 + i * 0.1, duration: 0.5 }}
                   className="group"
                 >
-                  <div className="text-2xl sm:text-3xl md:text-4xl font-syne font-bold text-foreground group-hover:text-[#0ebab1] transition-colors duration-300">
+                  <div className="text-2xl sm:text-3xl md:text-4xl font-syne font-bold text-foreground group-hover:text-accent transition-colors duration-300">
                     {stat.number}
                   </div>
                   <div className="text-xs sm:text-sm text-muted-foreground mt-1">{stat.label}</div>

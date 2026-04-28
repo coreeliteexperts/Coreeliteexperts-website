@@ -5,7 +5,6 @@ import { projects } from '@/data/projects';
 import SearchInput from '@/components/SearchInput';
 import Footer from '@/components/Footer';
 import Navigation from '@/components/Navigation';
-import SEO from '@/components/SEO';
 import { ArrowUpRight, ArrowRight, Search } from 'lucide-react';
 import MagneticButton from '@/components/MagneticButton';
 
@@ -127,7 +126,6 @@ const Projects = () => {
 
   return (
     <div className="min-h-screen bg-background" onMouseMove={handleMouseMove}>
-      <SEO title="Work" />
       <Navigation />
 
       {/* Hero Section */}

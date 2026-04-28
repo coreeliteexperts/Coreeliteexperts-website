@@ -8,7 +8,6 @@ import { Send, CheckCircle, Loader2, MapPin, Mail, Phone, ArrowUpRight } from 'l
 import { toast } from '@/hooks/use-toast';
 import Footer from '@/components/Footer';
 import Navigation from '@/components/Navigation';
-import SEO from '@/components/SEO';
 
 const contactSchema = z.object({
   name: z.string().trim().min(1, 'Name is required').max(100, 'Name must be less than 100 characters'),
@@ -75,7 +74,6 @@ const Contact = () => {
 
   return (
       <div className="min-h-screen bg-background" onMouseMove={handleMouseMove}>
-        <SEO title="Contact" />
         <Navigation />
 
         {/* Hero Section */}
