@@ -1,6 +1,5 @@
-<<<<<<< HEAD
+
 # STUDIO - Digital Agency Template
-=======
 # CoreEliteExperts
 
 Welcome to the official repository of **CoreEliteExperts**, an IT company established in **2025**. We specialize in delivering modern technology solutions that help businesses grow, innovate, and succeed in the digital world.
@@ -36,7 +35,7 @@ Our vision is to become a trusted global technology partner by delivering innova
 
 
 ## Repository
->>>>>>> 7c6e6f579ba207e704c9eab6e4162ce69d9c7df9
+
 
 A modern, premium digital agency template built with React, TypeScript, Tailwind CSS, and Framer Motion.
 
@@ -72,12 +71,10 @@ A modern, premium digital agency template built with React, TypeScript, Tailwind
 # Clone the repository
 git clone <repository-url>
 
-<<<<<<< HEAD
+
 # Navigate to project directory
 cd lumina-creative-hub
 
-=======
->>>>>>> 7c6e6f579ba207e704c9eab6e4162ce69d9c7df9
 # Install dependencies
 npm install
 
@@ -112,17 +109,16 @@ src/
 └── App.tsx          # Main app component
 ```
 
-<<<<<<< HEAD
+
 ## License
 
 See LICENSE.md for license details.
-=======
+
 If you would like to collaborate with us or learn more about our services:
 
 Email: contact@coreeliteexperts.com  
 Website: https://www.coreeliteexperts.com  
 
----
 
 © 2025 CoreEliteExperts. All rights reserved. </br>
 Devloped by Developers@Coreeliteexperts.com
@@ -147,4 +143,3 @@ Devloped by Developers@Coreeliteexperts.com
 
 
 
->>>>>>> 7c6e6f579ba207e704c9eab6e4162ce69d9c7df9

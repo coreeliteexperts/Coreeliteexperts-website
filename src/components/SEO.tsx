@@ -14,21 +14,12 @@ interface SEOProps {
 }
 
 const defaultMeta = {
-<<<<<<< HEAD
-  siteName: 'STUDIO',
-  title: 'STUDIO | Digital Design Agency',
-  description: 'We craft exceptional digital experiences through strategic design, innovative development, and creative storytelling. Transform your brand with our award-winning team.',
-  image: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80',
-  url: 'https://studio.design',
-  twitterHandle: '@studiodesign',
-=======
   siteName: 'CoreEliteExperts',
   title: 'CoreEliteExperts | Home',
   description: 'CoreEliteExperts is a modern IT company delivering innovative software, web solutions, and digital technologies that help businesses grow and succeed.',
   image: '/favicon.svg',
   url: 'https://coreeliteexperts.com',
   twitterHandle: '@CoreEliteExperts',
->>>>>>> 7c6e6f579ba207e704c9eab6e4162ce69d9c7df9
   locale: 'en_US',
 };
 
@@ -44,11 +35,7 @@ const SEO = ({
   section,
   tags = [],
 }: SEOProps) => {
-<<<<<<< HEAD
-  const fullTitle = title ? `${title} | ${defaultMeta.siteName}` : defaultMeta.title;
-=======
   const fullTitle = title ? `${defaultMeta.siteName} | ${title}` : defaultMeta.title;
->>>>>>> 7c6e6f579ba207e704c9eab6e4162ce69d9c7df9
 
   return (
     <Helmet>

@@ -16,15 +16,9 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO 
-<<<<<<< HEAD
-        title="Award-Winning Digital Agency"
-        description="We craft exceptional digital experiences through strategic design, innovative development, and creative storytelling. Transform your brand with our award-winning team."
-        url="https://studio.design"
-=======
         title="Home"
         description="CoreEliteExperts is a modern IT company delivering innovative software, web solutions, and digital technologies that help businesses grow and succeed."
         url="https://coreeliteexperts.com"
->>>>>>> 7c6e6f579ba207e704c9eab6e4162ce69d9c7df9
       />
       <OrganizationSchema />
       <WebsiteSchema />
