@@ -52,11 +52,7 @@ const CaseStudy = () => {
       <div className="min-h-screen bg-background selection:bg-accent/20 flex flex-col">
       <Navigation />
       <Helmet>
-<<<<<<< HEAD
-        <title>{project.title} | STUDIO Case Study</title>
-=======
         <title>CoreEliteExperts | {project.title}</title>
->>>>>>> 7c6e6f579ba207e704c9eab6e4162ce69d9c7df9
         <meta name="description" content={project.description} />
       </Helmet>
 

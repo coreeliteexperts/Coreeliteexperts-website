@@ -6,15 +6,9 @@ import heroBg from '@/assets/hero-bg.jpg';
 
 const words = [
   { text: 'We', number: '01' },
-<<<<<<< HEAD
-  { text: 'Create', number: '02' },
-  { text: 'Digital', number: '03' },
-  { text: 'Products', number: '04', accent: true },
-=======
   { text: 'Deliver', number: '02' },
   { text: 'Innovative', number: '03' },
   { text: 'Solutions', number: '04', accent: true },
->>>>>>> 7c6e6f579ba207e704c9eab6e4162ce69d9c7df9
 ];
 
 export const HeroSection = () => {
@@ -108,11 +102,7 @@ export const HeroSection = () => {
       
       {/* Floating orb - hidden on mobile for performance */}
       <motion.div
-<<<<<<< HEAD
-        className="absolute w-[300px] h-[300px] md:w-[600px] md:h-[600px] rounded-none bg-accent/10 blur-[80px] md:blur-[120px] hidden sm:block"
-=======
         className="absolute w-[300px] h-[300px] md:w-[600px] md:h-[600px] rounded-none bg-[#0ebab1]/10 blur-[80px] md:blur-[120px] hidden sm:block"
->>>>>>> 7c6e6f579ba207e704c9eab6e4162ce69d9c7df9
         style={{ 
           x: springX, 
           y: springY,
@@ -146,11 +136,7 @@ export const HeroSection = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 2, delay: 1 }}
-<<<<<<< HEAD
-        className="absolute top-[60%] left-[20%] w-2 h-2 bg-accent rounded-none hidden md:block"
-=======
         className="absolute top-[60%] left-[20%] w-2 h-2 bg-[#0ebab1] rounded-none hidden md:block"
->>>>>>> 7c6e6f579ba207e704c9eab6e4162ce69d9c7df9
         style={{
           x: mousePosition.x * 4,
           y: mousePosition.y * 4,
@@ -192,11 +178,7 @@ export const HeroSection = () => {
       >
         <span className="text-xs font-mono text-muted-foreground">{currentTime}</span>
         <div className="w-px h-12 bg-foreground/20" />
-<<<<<<< HEAD
-        <span className="text-xs font-mono text-muted-foreground">EST</span>
-=======
         <span className="text-xs font-mono text-muted-foreground">PST</span>
->>>>>>> 7c6e6f579ba207e704c9eab6e4162ce69d9c7df9
       </motion.div>
 
       {/* Main content */}
@@ -212,21 +194,13 @@ export const HeroSection = () => {
             className="flex items-center gap-3 sm:gap-4 mb-6 sm:mb-8 md:mb-12"
           >
             <motion.div 
-<<<<<<< HEAD
-              className="h-px bg-accent flex-shrink-0"
-=======
               className="h-px bg-[#0ebab1] flex-shrink-0"
->>>>>>> 7c6e6f579ba207e704c9eab6e4162ce69d9c7df9
               initial={{ width: 0 }}
               animate={{ width: 40 }}
               transition={{ duration: 1, delay: 0.7 }}
             />
             <span className="text-xs sm:text-sm font-mono text-muted-foreground tracking-wider">
-<<<<<<< HEAD
-              DIGITAL AGENCY — SINCE 2018
-=======
               IT Company — SINCE 2024
->>>>>>> 7c6e6f579ba207e704c9eab6e4162ce69d9c7df9
             </span>
           </motion.div>
 
@@ -250,11 +224,7 @@ export const HeroSection = () => {
                     className="flex items-baseline gap-2 sm:gap-4"
                   >
                     <motion.span 
-<<<<<<< HEAD
-                      className="text-xs sm:text-sm font-mono text-accent/60 hidden sm:inline-block"
-=======
                       className="text-xs sm:text-sm font-mono text-[#0ebab1]/60 hidden sm:inline-block"
->>>>>>> 7c6e6f579ba207e704c9eab6e4162ce69d9c7df9
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       transition={{ delay: 1 + index * 0.15, duration: 0.5 }}
@@ -263,14 +233,8 @@ export const HeroSection = () => {
                     </motion.span>
                     
                     <span 
-<<<<<<< HEAD
-                      className={`font-syne font-black text-[11vw] sm:text-6xl md:text-7xl lg:text-8xl xl:text-[120px] tracking-tight leading-[1] ${
-                        word.accent ? 'text-accent' : 'text-foreground'
-                      }`}
-=======
                       className="font-syne font-black text-[11vw] sm:text-6xl md:text-7xl lg:text-8xl xl:text-[120px] tracking-tight  leading-[1] text-foreground"
                       style={word.accent ? { color: '#0ebab1' } : undefined}
->>>>>>> 7c6e6f579ba207e704c9eab6e4162ce69d9c7df9
                     >
                       {word.text}
                     </span>
@@ -296,13 +260,8 @@ export const HeroSection = () => {
               className="max-w-md"
             >
               <p className="text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed">
-<<<<<<< HEAD
-                A creative studio crafting immersive digital products, brands, 
-                and experiences that captivate and inspire.
-=======
                 A modern IT company delivering reliable software, 
                 web solutions, and digital technologies that help businesses grow and succeed.
->>>>>>> 7c6e6f579ba207e704c9eab6e4162ce69d9c7df9
               </p>
             </motion.div>
 
@@ -334,11 +293,7 @@ export const HeroSection = () => {
                     </svg>
                   </motion.div>
                   <motion.div
-<<<<<<< HEAD
-                    className="absolute inset-0 bg-accent"
-=======
                     className="absolute inset-0 bg-[#0ebab1]"
->>>>>>> 7c6e6f579ba207e704c9eab6e4162ce69d9c7df9
                     initial={{ y: '100%' }}
                     whileHover={{ y: 0 }}
                     transition={{ duration: 0.3, ease: [0.19, 1, 0.22, 1] }}
@@ -349,19 +304,11 @@ export const HeroSection = () => {
               <MagneticButton>
                 <Link 
                   to="/contact" 
-<<<<<<< HEAD
-                  className="group relative inline-flex items-center justify-center gap-3 px-6 sm:px-8 py-3 sm:py-4 border border-foreground/20 text-foreground font-semibold rounded-full overflow-hidden hover:border-accent/50 transition-colors duration-300 text-sm sm:text-base w-full sm:w-auto"
-                >
-                  <span className="relative z-10">Start a Project</span>
-                  <motion.span 
-                    className="relative z-10 text-accent"
-=======
                   className="group relative inline-flex items-center justify-center gap-3 px-6 sm:px-8 py-3 sm:py-4 border border-foreground/20 text-foreground font-semibold rounded-full overflow-hidden hover:border-[#0ebab1]/50 transition-colors duration-300 text-sm sm:text-base w-full sm:w-auto"
                 >
                   <span className="relative z-10">Start a Project</span>
                   <motion.span 
                     className="relative z-10 text-[#0ebab1]"
->>>>>>> 7c6e6f579ba207e704c9eab6e4162ce69d9c7df9
                     animate={{ x: [0, 5, 0] }}
                     transition={{ duration: 1.5, repeat: Infinity }}
                   >
@@ -381,17 +328,10 @@ export const HeroSection = () => {
           >
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
               {[
-<<<<<<< HEAD
-                { number: '150+', label: 'Projects Completed' },
-                { number: '50+', label: 'Happy Clients' },
-                { number: '12', label: 'Team Members' },
-                { number: '6+', label: 'Years Experience' },
-=======
                 { number: '350+', label: 'Projects Completed' },
                 { number: '150+', label: 'Happy Clients' },
                 { number: '30', label: 'Team Members' },
                 { number: '2+', label: 'Years Execellence' },
->>>>>>> 7c6e6f579ba207e704c9eab6e4162ce69d9c7df9
               ].map((stat, i) => (
                 <motion.div 
                   key={stat.label}
@@ -400,11 +340,7 @@ export const HeroSection = () => {
                   transition={{ delay: 2.2 + i * 0.1, duration: 0.5 }}
                   className="group"
                 >
-<<<<<<< HEAD
-                  <div className="text-2xl sm:text-3xl md:text-4xl font-syne font-bold text-foreground group-hover:text-accent transition-colors duration-300">
-=======
                   <div className="text-2xl sm:text-3xl md:text-4xl font-syne font-bold text-foreground group-hover:text-[#0ebab1] transition-colors duration-300">
->>>>>>> 7c6e6f579ba207e704c9eab6e4162ce69d9c7df9
                     {stat.number}
                   </div>
                   <div className="text-xs sm:text-sm text-muted-foreground mt-1">{stat.label}</div>

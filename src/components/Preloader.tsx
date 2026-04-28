@@ -75,17 +75,8 @@ const Preloader = ({ onComplete }: { onComplete: () => void }) => {
                  transition={{ duration: 0.8, ease: easeInOutExpo, delay: 0.2 }}
                  className="flex items-center gap-3"
               >
-<<<<<<< HEAD
-                 <img
-                   src="/logo-cee.png"
-                   alt="CEE"
-                   className="w-[7.5rem] h-10 object-contain"
-                   draggable={false}
-                 />
-=======
                  <div className="w-2 h-2 bg-white rounded-full"></div>
                  <span className="font-syne font-bold text-white tracking-tight text-xl">STUDIO.</span>
->>>>>>> 7c6e6f579ba207e704c9eab6e4162ce69d9c7df9
               </motion.div>
            </div>
         </div>
