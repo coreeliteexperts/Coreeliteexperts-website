@@ -1,0 +1,47 @@
+Earning & Investment App – Concept Overview
+This is a mobile-first earning platform where users can invest small amounts of money and earn daily returns, while also growing their income through a referral system.
+
+How the Earning Model Works
+1. User Registration
+Users sign up using a referral code (optional but encouraged)
+Each user gets a unique referral link
+
+2. Investment System
+The platform offers different investment plans (VIP levels)
+Each plan includes:
+Investment amount
+Daily earning
+Validity period (e.g., 30 days)
+Total return
+
+Example:
+Invest: $100
+Daily income: $5
+Duration: 30 days
+Total return: $150
+
+3. Daily Earnings
+Once a user invests, they start receiving fixed daily income
+Earnings are automatically added to their account balance
+
+4. Referral Income
+Users can invite others using their referral link
+They earn commissions when their referrals invest
+
+This creates a network-based earning model
+
+5. Wallet System
+There are two balances:
+Available Balance → for investing again
+Withdraw Balance → for withdrawing money
+
+6. Deposit & Withdrawal
+Users can deposit funds (e.g., crypto like USDT)
+Withdraw earnings after reaching minimum limits
+
+7. Admin Control
+Admin manages:
+Users & approvals
+Investment plans
+Withdraw requests
+Bonuses & commissions
