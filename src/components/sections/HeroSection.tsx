@@ -269,20 +269,20 @@ export const HeroSection = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1.7, ease: [0.19, 1, 0.22, 1] }}
-              className="flex flex-col sm:flex-row gap-3 sm:gap-4"
+              className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4"
             >
               <MagneticButton>
                 <Link 
                   to="/work" 
-                  className="group relative inline-flex items-center justify-center gap-3 px-6 sm:px-8 py-3 sm:py-4 bg-foreground text-background font-semibold rounded-full overflow-hidden text-sm sm:text-base w-full sm:w-auto"
+                  className="group relative inline-flex h-12 shrink-0 items-center justify-center gap-2.5 whitespace-nowrap rounded-full bg-foreground px-6 text-sm font-semibold text-background overflow-hidden sm:px-7 sm:text-base w-full sm:w-auto"
                 >
                   <span className="relative z-10">View Our Work</span>
-                  <motion.div
-                    className="relative z-10 w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-background/20 flex items-center justify-center"
+                  <motion.span
+                    className="relative z-10 inline-flex"
                     whileHover={{ rotate: 45 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <svg width="12" height="12" viewBox="0 0 14 14" fill="none">
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="shrink-0" aria-hidden>
                       <path
                         d="M3 11L11 3M11 3H5M11 3V9"
                         stroke="currentColor"
@@ -291,7 +291,7 @@ export const HeroSection = () => {
                         strokeLinejoin="round"
                       />
                     </svg>
-                  </motion.div>
+                  </motion.span>
                   <motion.div
                     className="absolute inset-0 bg-accent"
                     initial={{ y: '100%' }}
@@ -304,11 +304,11 @@ export const HeroSection = () => {
               <MagneticButton>
                 <Link 
                   to="/contact" 
-                  className="group relative inline-flex items-center justify-center gap-3 px-6 sm:px-8 py-3 sm:py-4 border border-foreground/20 text-foreground font-semibold rounded-full overflow-hidden hover:border-accent/50 transition-colors duration-300 text-sm sm:text-base w-full sm:w-auto"
+                  className="group relative inline-flex h-12 shrink-0 items-center justify-center gap-2.5 whitespace-nowrap rounded-full border border-foreground/20 px-6 text-sm font-semibold text-foreground overflow-hidden transition-colors duration-300 hover:border-accent/50 sm:px-7 sm:text-base w-full sm:w-auto"
                 >
                   <span className="relative z-10">Start a Project</span>
                   <motion.span 
-                    className="relative z-10 text-accent"
+                    className="relative z-10 inline-flex text-accent"
                     animate={{ x: [0, 5, 0] }}
                     transition={{ duration: 1.5, repeat: Infinity }}
                   >
