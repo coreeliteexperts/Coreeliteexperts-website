@@ -200,7 +200,7 @@ export const HeroSection = () => {
               transition={{ duration: 1, delay: 0.7 }}
             />
             <span className="text-xs sm:text-sm font-mono text-muted-foreground tracking-wider">
-              DIGITAL AGENCY — SINCE 2018
+              DIGITAL SOLUTIONS COMPANY — SINCE 2024
             </span>
           </motion.div>
 
@@ -258,11 +258,10 @@ export const HeroSection = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1.5, ease: [0.19, 1, 0.22, 1] }}
-              className="max-w-md"
+              className="max-w-2xl"
             >
               <p className="text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed">
-                A creative studio crafting immersive digital products, brands, 
-                and experiences that captivate and inspire.
+                Core Elite Experts helps businesses streamline operations, automate infrastructure, and scale through technology, cloud engineering, software solutions, and digital execution.
               </p>
             </motion.div>
 
@@ -331,8 +330,8 @@ export const HeroSection = () => {
               {[
                 { number: '150+', label: 'Projects Completed' },
                 { number: '50+', label: 'Happy Clients' },
-                { number: '12', label: 'Team Members' },
-                { number: '6+', label: 'Years Experience' },
+                { number: '30', label: 'Team Members' },
+                { number: '3+', label: 'Years Experience' },
               ].map((stat, i) => (
                 <motion.div 
                   key={stat.label}

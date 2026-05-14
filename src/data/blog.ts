@@ -15,7 +15,176 @@ export interface BlogPost {
   featured: boolean;
 }
 
+const authorA = {
+  name: 'Hassan Raza',
+  role: 'DevOps Lead, Core Elite Experts',
+  image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80',
+};
+const authorB = {
+  name: 'Ayesha Malik',
+  role: 'Engineering Manager, Core Elite Experts',
+  image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80',
+};
+const authorC = {
+  name: 'Omar Farooq',
+  role: 'Finance Operations, Core Elite Experts',
+  image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=200&q=80',
+};
+const authorD = {
+  name: 'Sana Tariq',
+  role: 'Growth Marketing, Core Elite Experts',
+  image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=200&q=80',
+};
+const authorE = {
+  name: 'Zainab Hussain',
+  role: 'Product Design, Core Elite Experts',
+  image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80',
+};
+const authorF = {
+  name: 'Bilal Ahmed',
+  role: 'Media Production, Core Elite Experts',
+  image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80',
+};
+const authorG = {
+  name: 'Fatima Noor',
+  role: 'Operations Support, Core Elite Experts',
+  image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&q=80',
+};
+
 export const blogPosts: BlogPost[] = [
+  {
+    id: 'devops-cloud-scalable-delivery',
+    title: 'How DevOps and Cloud Engineering Speed Up Reliable Delivery',
+    excerpt:
+      'From CI/CD to infrastructure as code, learn why startups and SMEs invest in automated cloud foundations—and what to prioritize first.',
+    content: [
+      'Modern products live or die by how quickly teams can ship fixes and features without breaking production. DevOps practices bridge development and operations so releases are smaller, safer, and more frequent.',
+      'Cloud platforms such as AWS, Azure, and GCP give you elastic capacity, managed services, and global reach—but only if architecture, networking, and access controls are designed with security and cost in mind.',
+      'Containerization with Docker and orchestration with Kubernetes help standardize environments from a developer laptop to production. Paired with Terraform or similar IaC tools, your infrastructure becomes repeatable and auditable.',
+      'CI/CD pipelines automate testing and deployment, reducing human error and freeing engineers to focus on product logic instead of manual release checklists.',
+      'At Core Elite Experts, we help businesses adopt pragmatic automation: the right level of process for your stage, not buzzword-heavy complexity that slows you down.',
+    ],
+    category: 'DevOps & Cloud',
+    author: authorA,
+    date: 'May 10, 2026',
+    readTime: '7 min read',
+    image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1600&q=80',
+    featured: true,
+  },
+  {
+    id: 'custom-software-apis-dashboards',
+    title: 'Building Custom Software, APIs, and Dashboards That Scale',
+    excerpt:
+      'When off-the-shelf tools hit limits, tailored web apps, APIs, and admin dashboards align workflows with how your business actually operates.',
+    content: [
+      'Custom software is not about writing more code—it is about modeling your domain correctly so teams spend less time copying data between spreadsheets and more time on decisions.',
+      'Well-designed APIs let mobile apps, partners, and internal tools share one source of truth. Versioning, authentication, and observability should be planned from day one, not bolted on later.',
+      'Dashboards succeed when they answer a small set of high-signal questions for each role. Overloading every chart into one screen creates noise; progressive disclosure and clear KPIs create clarity.',
+      'Performance and reliability come from sensible database design, caching where it helps, and load testing before traffic spikes—not from premature microservices.',
+      'We build systems with maintainability in mind so your team can evolve features as the business grows, without rewriting from scratch every year.',
+    ],
+    category: 'Software Development',
+    author: authorB,
+    date: 'May 8, 2026',
+    readTime: '6 min read',
+    image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1600&q=80',
+    featured: false,
+  },
+  {
+    id: 'bookkeeping-financial-clarity-smes',
+    title: 'Bookkeeping and Financial Reporting: Clarity for Growing SMEs',
+    excerpt:
+      'Clean books, reconciled accounts, and timely reports reduce risk and make fundraising, tax season, and operations far less stressful.',
+    content: [
+      'Many growing businesses run on fragmented tools—spreadsheets here, invoices there—until reconciliation becomes a monthly crisis. Structured bookkeeping creates a single financial narrative you can trust.',
+      'Platforms like QuickBooks Online and Xero work best when chart of accounts, categories, and closing routines are set up intentionally for your industry.',
+      'Monthly reconciliation catches errors early, while payroll and tax preparation support keeps compliance aligned with local regulations.',
+      'Financial reporting is not only for investors; it helps leadership see cash runway, margin pressure, and where operational changes will have the biggest payoff.',
+      'Our accounting and bookkeeping services focus on accuracy, clear communication, and processes you can sustain—not one-off cleanups that unravel the next quarter.',
+    ],
+    category: 'Accounting',
+    author: authorC,
+    date: 'May 5, 2026',
+    readTime: '6 min read',
+    image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1600&q=80',
+    featured: false,
+  },
+  {
+    id: 'digital-marketing-seo-leads',
+    title: 'Digital Marketing That Connects SEO, Content, and Lead Generation',
+    excerpt:
+      'A practical look at aligning search visibility, campaigns, and email so marketing spend supports pipeline—not vanity metrics.',
+    content: [
+      'SEO is a long game: technical health, useful content, and credible backlinks compound over time. Short-term tactics that ignore user intent eventually cost more than they save.',
+      'Social and paid campaigns work best when messaging matches the funnel stage—awareness creative should not be judged with the same metrics as bottom-of-funnel conversion.',
+      'Email remains one of the highest-ROI channels when lists are permission-based, segments are meaningful, and automation supports onboarding and retention.',
+      'Lead generation improves when landing pages, forms, and CRM handoffs are instrumented so you know which channels actually produce revenue, not just clicks.',
+      'We help teams build a coherent strategy: fewer disconnected experiments, more measured iteration toward growth goals.',
+    ],
+    category: 'Digital Marketing',
+    author: authorD,
+    date: 'May 2, 2026',
+    readTime: '7 min read',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1600&q=80',
+    featured: false,
+  },
+  {
+    id: 'ui-ux-design-systems-usability',
+    title: 'UI/UX and Design Systems: Usability, Brand, and Speed Together',
+    excerpt:
+      'Strong interfaces balance brand expression with accessibility, consistency, and engineering constraints—here is how we approach it.',
+    content: [
+      'Users judge trust and quality in seconds. Visual hierarchy, spacing, and typography do more for comprehension than decorative trends that fight readability.',
+      'Design systems speed delivery by documenting components, states, and usage rules so designers and developers share one language.',
+      'Dashboards and internal tools deserve the same rigor as marketing sites; confusing ops software creates hidden tax on every employee every day.',
+      'Prototypes and user flows reduce rework by surfacing edge cases before they are expensive to fix in production.',
+      'We design for real devices, keyboard navigation, and contrast—not only idealized mockups—so experiences hold up under pressure.',
+    ],
+    category: 'UI/UX Design',
+    author: authorE,
+    date: 'April 28, 2026',
+    readTime: '6 min read',
+    image: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=1600&q=80',
+    featured: false,
+  },
+  {
+    id: 'video-editing-short-form-brand',
+    title: 'Video Editing for Short-Form, Promos, and Brand Storytelling',
+    excerpt:
+      'From reels to product explainers, post-production choices shape retention, clarity, and how professional your brand feels on every platform.',
+    content: [
+      'Short-form video rewards tight pacing: a clear hook in the first seconds, readable captions, and sound design that works with or without audio.',
+      'Promotional and brand videos need aligned messaging, color grading, and graphics that match your identity so every touchpoint feels cohesive.',
+      'Podcast editing is about intelligibility—noise reduction, leveling, and chapter-friendly structure so listeners stay engaged.',
+      'Motion graphics can clarify complex ideas when used sparingly; overuse distracts from the story you are trying to tell.',
+      'We deliver formats optimized per channel so your team spends less time re-exporting and more time publishing.',
+    ],
+    category: 'Video Production',
+    author: authorF,
+    date: 'April 22, 2026',
+    readTime: '5 min read',
+    image: 'https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=1600&q=80',
+    featured: false,
+  },
+  {
+    id: 'business-support-virtual-operations',
+    title: 'Business Support Services That Keep Operations Moving',
+    excerpt:
+      'Virtual assistance, coordination, and documentation are force multipliers when scoped to the workflows that slow your leadership team down.',
+    content: [
+      'Founders and small teams often lose hours to scheduling, inbox triage, and data entry. Delegating repeatable tasks frees attention for strategy and customers.',
+      'Clear playbooks—how tools are used, where files live, and escalation paths—make remote support reliable instead of ad hoc.',
+      'Project coordination across vendors or internal squads needs lightweight status rhythms so blockers surface early.',
+      'Research and documentation turn opinions into decisions you can defend with stakeholders.',
+      'We provide structured support so you can scale headcount thoughtfully rather than hiring reactively for every administrative gap.',
+    ],
+    category: 'Business Support',
+    author: authorG,
+    date: 'April 18, 2026',
+    readTime: '5 min read',
+    image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1600&q=80',
+    featured: false,
+  },
   {
     id: 'future-of-brand-identity',
     title: 'The Future of Brand Identity in a Digital-First World',
@@ -36,7 +205,7 @@ export const blogPosts: BlogPost[] = [
     date: 'December 15, 2024',
     readTime: '6 min read',
     image: 'https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&w=1600&q=80',
-    featured: true,
+    featured: false,
   },
   {
     id: 'psychology-of-color',
@@ -102,7 +271,7 @@ export const blogPosts: BlogPost[] = [
     date: 'November 28, 2024',
     readTime: '6 min read',
     image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1600&q=80',
-    featured: true,
+    featured: false,
   },
   {
     id: 'minimalism-in-ux',

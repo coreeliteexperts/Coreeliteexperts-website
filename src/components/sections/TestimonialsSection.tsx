@@ -6,24 +6,27 @@ import { ChevronLeft, ChevronRight, Quote } from 'lucide-react';
 const testimonials = [
   {
     id: 1,
-    quote: "Working with STUDIO was transformative. They didn't just deliver a website—they crafted an experience that perfectly captures our brand's essence.",
-    author: 'Sarah Chen',
-    role: 'CEO, Luminary Tech',
-    avatar: 'SC',
+    quote:
+      'Core Elite Experts helped us streamline our cloud infrastructure and improve deployment efficiency significantly. Their technical expertise and execution speed made a real difference in our operations.',
+    author: 'Ahmed Khan',
+    role: 'Founder, SaaS Startup',
+    avatar: 'AK',
   },
   {
     id: 2,
-    quote: "Their attention to detail and creative vision exceeded every expectation. The results speak for themselves—our engagement has never been higher.",
-    author: 'Michael Rivera',
-    role: 'Founder, Cascade Ventures',
-    avatar: 'MR',
+    quote:
+      'The team delivered structured workflows, reliable communication, and scalable solutions that improved both our operational efficiency and project delivery process.',
+    author: 'Sarah Rahman',
+    role: 'Operations Manager',
+    avatar: 'SR',
   },
   {
     id: 3,
-    quote: "A true partnership from day one. They challenged our thinking, pushed boundaries, and delivered work we're incredibly proud of.",
-    author: 'Emma Watson',
-    role: 'CMO, Ethereal Design',
-    avatar: 'EW',
+    quote:
+      'From DevOps automation to business support, the entire process was handled professionally. Their ability to manage multiple areas under one company saved us both time and resources.',
+    author: 'Michael Ali',
+    role: 'Director, Digital Agency',
+    avatar: 'MA',
   },
 ];
 
@@ -90,7 +93,7 @@ export const TestimonialsSection = () => {
 
             <AnimatedLine delay={0.3}>
               <h2 className="font-syne font-bold text-4xl sm:text-5xl md:text-6xl tracking-tight leading-[1.1]">
-                Words from those we've worked with.
+                What Businesses Say About Working With Us
               </h2>
             </AnimatedLine>
           </div>
@@ -121,7 +124,7 @@ export const TestimonialsSection = () => {
 
         {/* Testimonial Card */}
         <div className="relative max-w-4xl mx-auto">
-          <div className="relative min-h-[320px] md:min-h-[280px]">
+          <div className="relative min-h-[380px] md:min-h-[320px]">
             {testimonials.map((testimonial, index) => (
               <motion.div
                 key={testimonial.id}

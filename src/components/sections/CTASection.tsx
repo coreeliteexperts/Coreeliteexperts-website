@@ -157,10 +157,9 @@ export const CTASection = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.6 }}
-              className="text-lg md:text-xl text-muted-foreground max-w-md leading-relaxed"
+              className="text-lg md:text-xl text-muted-foreground max-w-2xl leading-relaxed"
             >
-              Ready to transform your digital presence? Let's discuss your next project 
-              and create something extraordinary together.
+              Ready to improve your systems, automate operations, and scale your business with confidence? Let&apos;s discuss your next project and build reliable solutions that support long-term growth.
             </motion.p>
 
             <motion.div
@@ -218,9 +217,9 @@ export const CTASection = () => {
           >
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
               {[
-                { label: 'Email', value: 'hello@studio.design', href: 'mailto:hello@studio.design' },
-                { label: 'Phone', value: '+1 (555) 123-4567', href: 'tel:+15551234567' },
-                { label: 'Location', value: 'New York, NY', href: null },
+                { label: 'Email', value: 'info@coreeliteexperts.com', href: 'mailto:info@coreeliteexperts.com' },
+                { label: 'Phone', value: '+92 3554475474', href: 'tel:+923554475474' },
+                { label: 'Location', value: 'Danyore, Gilgit-Baltistan, Pakistan', href: null },
               ].map((item, i) => (
                 <motion.div 
                   key={item.label}

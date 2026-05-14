@@ -3,9 +3,9 @@ import { useRef, useState } from 'react';
 import { AnimatedLine } from '@/components/AnimatedText';
 
 const stats = [
-  { number: '150+', label: 'Projects', description: 'Successfully delivered' },
-  { number: '12', label: 'Awards', description: 'Industry recognition' },
-  { number: '98%', label: 'Happy Clients', description: 'Satisfaction rate' },
+  { number: '150+', label: 'Projects Delivered' },
+  { number: '50+', label: 'Business Clients' },
+  { number: '30+', label: 'Team Members' },
 ];
 
 export const AboutSection = () => {
@@ -81,24 +81,38 @@ export const AboutSection = () => {
 
             <AnimatedLine delay={0.2}>
               <h2 className="font-syne font-bold text-4xl sm:text-5xl md:text-6xl tracking-tight mb-8 leading-[1.1]">
-                We are a team of creative minds & craftsmen.
+                Building Systems That Help Businesses Scale
               </h2>
             </AnimatedLine>
 
-            <div className="space-y-6 mb-10">
-              <AnimatedLine delay={0.4}>
-                <p className="text-lg text-muted-foreground leading-relaxed max-w-xl">
-                  Founded in 2019, our studio has been at the forefront of digital innovation. 
-                  We blend strategy, creativity, and technology to build experiences that 
-                  resonate with audiences and drive meaningful results.
+            <div className="space-y-5 sm:space-y-6 mb-10 max-w-2xl">
+              <AnimatedLine delay={0.3}>
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  Core Elite Experts (Private) Limited is a technology and operations company focused on helping startups, SMEs, and modern businesses improve execution, automate workflows, and scale efficiently.
                 </p>
               </AnimatedLine>
 
-              <AnimatedLine delay={0.5}>
-                <p className="text-muted-foreground leading-relaxed max-w-xl">
-                  Our approach is rooted in collaboration. We work closely with brands 
-                  to understand their vision, challenge conventions, and create work 
-                  that stands apart in today's crowded digital landscape.
+              <AnimatedLine delay={0.38}>
+                <p className="text-muted-foreground leading-relaxed">
+                  We are a team of top-tier professionals delivering innovative, future-ready digital solutions. We specialize in IT, Cloud Computing, DevOps, Digital Marketing, and business support services designed to help companies operate more efficiently and scale with confidence.
+                </p>
+              </AnimatedLine>
+
+              <AnimatedLine delay={0.46}>
+                <p className="text-muted-foreground leading-relaxed">
+                  Based in Gilgit-Baltistan, Pakistan, our expertise includes DevOps Engineering, Cloud Infrastructure, Software Development, Accounting & Bookkeeping, UI/UX Design, Video Editing, and operational support services.
+                </p>
+              </AnimatedLine>
+
+              <AnimatedLine delay={0.54}>
+                <p className="text-muted-foreground leading-relaxed">
+                  Our approach combines technical expertise, structured execution, and scalable systems to solve real business challenges and support long-term growth.
+                </p>
+              </AnimatedLine>
+
+              <AnimatedLine delay={0.62}>
+                <p className="text-muted-foreground leading-relaxed">
+                  We believe modern businesses need more than isolated services — they need reliable systems, strong execution, and a team capable of managing technology, operations, and growth under one roof.
                 </p>
               </AnimatedLine>
             </div>
@@ -169,7 +183,7 @@ export const AboutSection = () => {
               className="absolute -left-6 bottom-12 bg-background border border-border px-6 py-4 shadow-xl"
             >
               <span className="text-xs font-mono text-muted-foreground">ESTABLISHED</span>
-              <span className="block font-syne font-bold text-3xl mt-1">2019</span>
+              <span className="block font-syne font-bold text-3xl mt-1">2024</span>
             </motion.div>
 
             {/* Side label */}
@@ -181,7 +195,7 @@ export const AboutSection = () => {
               style={{ writingMode: 'vertical-rl', textOrientation: 'mixed' }}
             >
               <span className="text-xs font-mono text-muted-foreground tracking-widest">
-                CRAFTING DIGITAL EXPERIENCES
+                ENGINEERING SCALABLE DIGITAL SOLUTIONS
               </span>
             </motion.div>
           </motion.div>
