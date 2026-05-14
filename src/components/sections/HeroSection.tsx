@@ -6,9 +6,9 @@ import heroBg from '@/assets/hero-bg.jpg';
 
 const words = [
   { text: 'We', number: '01' },
-  { text: 'Create', number: '02' },
+  { text: 'Deliver', number: '02' },
   { text: 'Digital', number: '03' },
-  { text: 'Products', number: '04', accent: true },
+  { text: 'Solutions', number: '04', accent: true },
 ];
 
 export const HeroSection = () => {
