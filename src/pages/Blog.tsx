@@ -5,6 +5,8 @@ import { ArrowUpRight, Search } from 'lucide-react';
 import { blogPosts } from '@/data/blog';
 import SearchInput from '@/components/SearchInput';
 import NewsletterForm from '@/components/NewsletterForm';
+import { UnsplashPicture } from '@/components/UnsplashPicture';
+import { optimizeUnsplashUrl } from '@/lib/unsplashImage';
 import Footer from '@/components/Footer';
 import Navigation from '@/components/Navigation';
 
@@ -167,11 +169,22 @@ const Blog = () => {
                                {featuredPost.category}
                             </span>
                          </div>
-                         <motion.img 
-                           src={featuredPost.image} 
-                           alt={featuredPost.title} 
-                           className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                         />
+                         <motion.div
+                           className="absolute inset-0"
+                           initial={{ scale: 1.02 }}
+                           whileHover={{ scale: 1.05 }}
+                           transition={{ duration: 0.7, ease: [0.19, 1, 0.22, 1] }}
+                         >
+                           <UnsplashPicture
+                             src={featuredPost.image}
+                             alt={featuredPost.title}
+                             widths={[400, 640, 800, 960, 1200]}
+                             sizes="(max-width: 768px) 100vw, 40vw"
+                             className="w-full h-full object-cover"
+                             loading="eager"
+                             fetchPriority="high"
+                           />
+                         </motion.div>
                       </div>
 
                       {/* Content */}
@@ -196,7 +209,7 @@ const Blog = () => {
                          
                          <div className="flex items-center justify-between mt-auto pt-6 border-t border-border/50">
                             <div className="flex items-center gap-3">
-                               <img src={featuredPost.author.image} alt={featuredPost.author.name} className="w-8 h-8 object-cover border border-border" />
+                               <img src={optimizeUnsplashUrl(featuredPost.author.image, { width: 64 })} alt={featuredPost.author.name} className="w-8 h-8 object-cover border border-border" loading="lazy" decoding="async" />
                                <div>
                                   <p className="text-sm font-bold text-foreground">{featuredPost.author.name}</p>
                                   <p className="text-xs text-muted-foreground font-mono">{featuredPost.date} · {featuredPost.readTime}</p>
@@ -321,10 +334,13 @@ const Blog = () => {
 
                       {/* Image Preview (Right) */}
                       <div className="md:col-span-3 relative hidden md:block aspect-[4/3] overflow-hidden bg-muted">
-                         <img 
-                           src={post.image} 
-                           alt={post.title} 
-                           className="w-full h-full object-cover filter grayscale group-hover:grayscale-0 scale-110 group-hover:scale-100 transition-all duration-700 ease-out" 
+                         <UnsplashPicture
+                           src={post.image}
+                           alt={post.title}
+                           widths={[320, 480, 640, 960]}
+                           sizes="(max-width: 768px) 0px, 25vw"
+                           className="w-full h-full object-cover filter grayscale group-hover:grayscale-0 scale-110 group-hover:scale-100 transition-all duration-700 ease-out"
+                           loading="lazy"
                          />
                          <div className="absolute inset-0 bg-accent/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                          

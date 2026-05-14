@@ -15,8 +15,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        syne: ['Syne', 'sans-serif'],
-        inter: ['Inter', 'sans-serif'],
+        syne: ['Syne Variable', 'Syne', 'sans-serif'],
+        inter: ['Inter Variable', 'Inter', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",

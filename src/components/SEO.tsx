@@ -1,4 +1,5 @@
 import { Helmet } from 'react-helmet-async';
+import { optimizeUnsplashUrl } from '@/lib/unsplashImage';
 
 interface SEOProps {
   title?: string;
@@ -17,7 +18,10 @@ const defaultMeta = {
   siteName: 'STUDIO',
   title: 'STUDIO | Digital Design Agency',
   description: 'We craft exceptional digital experiences through strategic design, innovative development, and creative storytelling. Transform your brand with our award-winning team.',
-  image: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80',
+  image: optimizeUnsplashUrl(
+    'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80',
+    { width: 1200 },
+  ),
   url: 'https://studio.design',
   twitterHandle: '@studiodesign',
   locale: 'en_US',

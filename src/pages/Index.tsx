@@ -1,21 +1,27 @@
+import { lazy, Suspense } from 'react';
 import { motion } from 'framer-motion';
 import Navigation from '@/components/Navigation';
 import CustomCursor from '@/components/CustomCursor';
 import HeroSection from '@/components/sections/HeroSection';
-import AboutSection from '@/components/sections/AboutSection';
-import ServicesSection from '@/components/sections/ServicesSection';
-import WorkSection from '@/components/sections/WorkSection';
-import ProcessSection from '@/components/sections/ProcessSection';
-import TestimonialsSection from '@/components/sections/TestimonialsSection';
-import CTASection from '@/components/sections/CTASection';
 import Footer from '@/components/Footer';
 import SEO from '@/components/SEO';
 import { OrganizationSchema, WebsiteSchema, ProfessionalServiceSchema } from '@/components/StructuredData';
 
+const AboutSection = lazy(() => import('@/components/sections/AboutSection'));
+const ServicesSection = lazy(() => import('@/components/sections/ServicesSection'));
+const WorkSection = lazy(() => import('@/components/sections/WorkSection'));
+const ProcessSection = lazy(() => import('@/components/sections/ProcessSection'));
+const TestimonialsSection = lazy(() => import('@/components/sections/TestimonialsSection'));
+const CTASection = lazy(() => import('@/components/sections/CTASection'));
+
+const SectionFallback = () => (
+  <div className="min-h-[30vh] w-full" aria-hidden />
+);
+
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
-      <SEO 
+      <SEO
         title="Award-Winning Digital Agency"
         description="We craft exceptional digital experiences through strategic design, innovative development, and creative storytelling. Transform your brand with our award-winning team."
         url="https://studio.design"
@@ -31,21 +37,22 @@ const Index = () => {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6 }}
       >
-        {/* Noise overlay for texture */}
         <div className="noise-overlay" />
-        
+
         <Navigation />
-        
+
         <main>
           <HeroSection />
-          <AboutSection />
-          <ServicesSection />
-          <WorkSection />
-          <ProcessSection />
-          <TestimonialsSection />
-          <CTASection />
+          <Suspense fallback={<SectionFallback />}>
+            <AboutSection />
+            <ServicesSection />
+            <WorkSection />
+            <ProcessSection />
+            <TestimonialsSection />
+            <CTASection />
+          </Suspense>
         </main>
-        
+
         <Footer />
       </motion.div>
     </div>

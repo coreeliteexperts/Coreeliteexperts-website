@@ -1,5 +1,5 @@
 import { motion, useScroll, useTransform, useMotionValue, useSpring } from 'framer-motion';
-import { useRef, useState, useEffect } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import MagneticButton from '@/components/MagneticButton';
 import heroBg from '@/assets/hero-bg.jpg';
@@ -13,9 +13,9 @@ const words = [
 
 export const HeroSection = () => {
   const ref = useRef(null);
+  const moveRaf = useRef(0);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [currentTime, setCurrentTime] = useState('');
-  
+
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ['start start', 'end start'],
@@ -33,26 +33,23 @@ export const HeroSection = () => {
   const springY = useSpring(cursorY, { stiffness: 100, damping: 20 });
 
   useEffect(() => {
-    const updateTime = () => {
-      const now = new Date();
-      setCurrentTime(now.toLocaleTimeString('en-US', { 
-        hour: '2-digit', 
-        minute: '2-digit',
-        hour12: false 
-      }));
+    return () => {
+      if (moveRaf.current) cancelAnimationFrame(moveRaf.current);
     };
-    updateTime();
-    const interval = setInterval(updateTime, 1000);
-    return () => clearInterval(interval);
   }, []);
 
   const handleMouseMove = (e: React.MouseEvent) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    cursorX.set(e.clientX - rect.left);
-    cursorY.set(e.clientY - rect.top);
-    setMousePosition({
-      x: (e.clientX - rect.left - rect.width / 2) / 50,
-      y: (e.clientY - rect.top - rect.height / 2) / 50,
+    const target = e.currentTarget;
+    const { clientX, clientY } = e;
+    if (moveRaf.current) cancelAnimationFrame(moveRaf.current);
+    moveRaf.current = requestAnimationFrame(() => {
+      const rect = target.getBoundingClientRect();
+      cursorX.set(clientX - rect.left);
+      cursorY.set(clientY - rect.top);
+      setMousePosition({
+        x: (clientX - rect.left - rect.width / 2) / 50,
+        y: (clientY - rect.top - rect.height / 2) / 50,
+      });
     });
   };
 
@@ -65,9 +62,12 @@ export const HeroSection = () => {
     >
       {/* Background */}
       <motion.div className="absolute inset-0" style={{ y: bgY }}>
-        <img 
-          src={heroBg} 
-          alt="" 
+        <img
+          src={heroBg}
+          alt=""
+          fetchPriority="high"
+          loading="eager"
+          decoding="async"
           className="w-full h-full object-cover opacity-40 scale-110"
         />
         <div className="absolute inset-x-0 top-0 bottom-0 bg-gradient-to-b from-background/60 via-background/40 to-background" />
@@ -168,17 +168,6 @@ export const HeroSection = () => {
           SCROLL TO EXPLORE
         </motion.div>
         <div className="w-px h-20 bg-gradient-to-b from-transparent via-foreground/30 to-transparent" />
-      </motion.div>
-
-      <motion.div 
-        initial={{ opacity: 0, x: 50 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ delay: 1.5, duration: 1 }}
-        className="absolute right-8 top-1/2 -translate-y-1/2 hidden lg:flex flex-col items-center gap-4"
-      >
-        <span className="text-xs font-mono text-muted-foreground">{currentTime}</span>
-        <div className="w-px h-12 bg-foreground/20" />
-        <span className="text-xs font-mono text-muted-foreground">EST</span>
       </motion.div>
 
       {/* Main content */}

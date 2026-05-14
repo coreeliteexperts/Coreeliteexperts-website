@@ -6,6 +6,8 @@ import SEO from '@/components/SEO';
 import { ArticleSchema, BreadcrumbSchema } from '@/components/StructuredData';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import { UnsplashPicture } from '@/components/UnsplashPicture';
+import { optimizeUnsplashUrl } from '@/lib/unsplashImage';
 
 const BlogPost = () => {
   const { id } = useParams<{ id: string }>();
@@ -41,7 +43,7 @@ const BlogPost = () => {
       <SEO
         title={post.title}
         description={post.excerpt}
-        image={post.image}
+        image={optimizeUnsplashUrl(post.image, { width: 1200 })}
         url={`https://studio.design/blog/${post.id}`}
         type="article"
         author={post.author.name}
@@ -52,7 +54,7 @@ const BlogPost = () => {
       <ArticleSchema
         headline={post.title}
         description={post.excerpt}
-        image={post.image}
+        image={optimizeUnsplashUrl(post.image, { width: 1200 })}
         datePublished={post.date}
         author={{ name: post.author.name }}
       />
@@ -123,10 +125,14 @@ const BlogPost = () => {
               transition={{ duration: 0.8 }}
               className="relative w-full aspect-[16/9] md:aspect-[2.4/1] overflow-hidden rounded-sm"
            >
-              <img 
-                src={post.image} 
-                alt={post.title} 
+              <UnsplashPicture
+                src={post.image}
+                alt={post.title}
+                widths={[640, 960, 1280, 1600]}
+                sizes="(max-width: 768px) 100vw, 90vw"
                 className="w-full h-full object-cover"
+                loading="eager"
+                fetchPriority="high"
               />
               
               {/* Floating Info Box on Image */}
@@ -134,9 +140,11 @@ const BlogPost = () => {
                  <p className="text-xs font-bold uppercase tracking-widest text-foreground/40 mb-3">Author</p>
                  <div className="flex items-center gap-3">
                     <img 
-                       src={post.author.image} 
+                       src={optimizeUnsplashUrl(post.author.image, { width: 80 })} 
                        alt={post.author.name} 
                        className="w-10 h-10 rounded-full object-cover" 
+                       loading="lazy"
+                       decoding="async"
                     />
                     <div>
                        <p className="font-syne font-bold leading-none mb-1">{post.author.name}</p>
@@ -157,7 +165,7 @@ const BlogPost = () => {
                     {/* Mobile-only Author (visible on small screens) */}
                     <div className="md:hidden mb-8 pb-8 border-b border-foreground/10">
                        <div className="flex items-center gap-3">
-                          <img src={post.author.image} alt={post.author.name} className="w-10 h-10 rounded-full object-cover" />
+                          <img src={optimizeUnsplashUrl(post.author.image, { width: 80 })} alt={post.author.name} className="w-10 h-10 rounded-full object-cover" loading="lazy" decoding="async" />
                           <div>
                              <p className="font-bold">{post.author.name}</p>
                              <p className="text-xs text-foreground/60">{post.author.role}</p>
@@ -192,13 +200,13 @@ const BlogPost = () => {
                     <div>
                        <p className="font-mono text-xs uppercase tracking-widest text-foreground/40 mb-6">Share</p>
                        <div className="flex gap-4">
-                          <button className="w-10 h-10 border border-foreground/10 rounded-full flex items-center justify-center hover:bg-foreground hover:text-background transition-all">
+                          <button type="button" className="w-10 h-10 border border-foreground/10 rounded-full flex items-center justify-center hover:bg-foreground hover:text-background transition-all" aria-label="Share on Twitter">
                              <Twitter className="w-4 h-4" />
                           </button>
-                          <button className="w-10 h-10 border border-foreground/10 rounded-full flex items-center justify-center hover:bg-foreground hover:text-background transition-all">
+                          <button type="button" className="w-10 h-10 border border-foreground/10 rounded-full flex items-center justify-center hover:bg-foreground hover:text-background transition-all" aria-label="Share on LinkedIn">
                              <Linkedin className="w-4 h-4" />
                           </button>
-                          <button className="w-10 h-10 border border-foreground/10 rounded-full flex items-center justify-center hover:bg-foreground hover:text-background transition-all">
+                          <button type="button" className="w-10 h-10 border border-foreground/10 rounded-full flex items-center justify-center hover:bg-foreground hover:text-background transition-all" aria-label="Copy link or share">
                              <Share2 className="w-4 h-4" />
                           </button>
                        </div>
@@ -244,10 +252,13 @@ const BlogPost = () => {
               {relatedPosts.map((post) => (
                  <Link key={post.id} to={`/blog/${post.id}`} className="group block">
                     <div className="aspect-[16/9] overflow-hidden bg-foreground/5 mb-6 rounded-sm">
-                       <img 
-                          src={post.image} 
-                          alt={post.title} 
-                          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
+                       <UnsplashPicture
+                          src={post.image}
+                          alt={post.title}
+                          widths={[400, 640, 800, 960]}
+                          sizes="(max-width: 768px) 100vw, 45vw"
+                          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                          loading="lazy"
                        />
                     </div>
                     <div className="flex justify-between items-start">

@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { AnimatedLine } from '@/components/AnimatedText';
 import { projects } from '@/data/projects';
 import { ArrowUpRight } from 'lucide-react';
+import { UnsplashPicture } from '@/components/UnsplashPicture';
 
 interface ProjectCardProps {
   project: typeof projects[0];
@@ -26,13 +27,20 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
       <Link to={`/work/${project.id}`} className="block h-full">
         {/* Image Container */}
         <div className="relative overflow-hidden aspect-[4/3] mb-8 rounded-none">
-          <motion.img
-            src={project.thumbnail}
-            alt={project.title}
-            className="w-full h-full object-cover"
+          <motion.div
+            className="w-full h-full"
             animate={{ scale: isHovered ? 1.05 : 1 }}
             transition={{ duration: 0.7, ease: [0.19, 1, 0.22, 1] }}
-          />
+          >
+            <UnsplashPicture
+              src={project.thumbnail}
+              alt={project.title}
+              widths={[400, 640, 800, 1200]}
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className="w-full h-full object-cover"
+              loading="lazy"
+            />
+          </motion.div>
           
           {/* Hover Overlay - Subtle Tint */}
           <motion.div 

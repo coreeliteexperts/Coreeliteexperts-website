@@ -1,6 +1,7 @@
 import { motion, useInView } from 'framer-motion';
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { AnimatedLine } from '@/components/AnimatedText';
+import { UnsplashPicture } from '@/components/UnsplashPicture';
 
 const stats = [
   { number: '150+', label: 'Projects Delivered' },
@@ -8,16 +9,31 @@ const stats = [
   { number: '30+', label: 'Team Members' },
 ];
 
+const ABOUT_IMAGE =
+  'https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&w=1200&q=80';
+
 export const AboutSection = () => {
   const ref = useRef(null);
+  const moveRaf = useRef(0);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
+  useEffect(() => {
+    return () => {
+      if (moveRaf.current) cancelAnimationFrame(moveRaf.current);
+    };
+  }, []);
+
   const handleMouseMove = (e: React.MouseEvent) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    setMousePosition({
-      x: (e.clientX - rect.left - rect.width / 2) / 30,
-      y: (e.clientY - rect.top - rect.height / 2) / 30,
+    const target = e.currentTarget;
+    const { clientX, clientY } = e;
+    if (moveRaf.current) cancelAnimationFrame(moveRaf.current);
+    moveRaf.current = requestAnimationFrame(() => {
+      const rect = target.getBoundingClientRect();
+      setMousePosition({
+        x: (clientX - rect.left - rect.width / 2) / 30,
+        y: (clientY - rect.top - rect.height / 2) / 30,
+      });
     });
   };
 
@@ -163,10 +179,13 @@ export const AboutSection = () => {
             />
             
             <div className="relative aspect-[4/5] overflow-hidden bg-secondary">
-              <img
-                src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&w=1200&q=80"
+              <UnsplashPicture
+                src={ABOUT_IMAGE}
                 alt="Creative team at work"
+                widths={[400, 640, 800, 960, 1200]}
+                sizes="(max-width: 1024px) 100vw, 42vw"
                 className="w-full h-full object-cover"
+                loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
               

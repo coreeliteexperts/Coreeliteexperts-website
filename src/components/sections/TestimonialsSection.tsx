@@ -30,10 +30,7 @@ const testimonials = [
   },
 ];
 
-const clients = [
-  'LUMINARY', 'ETHEREAL', 'ZENITH', 'CASCADE', 'AURORA', 'NEXUS',
-  'VERTEX', 'PRISM', 'ORBIT', 'STELLAR',
-];
+const clients = ['LUMINARY', 'ETHEREAL', 'ZENITH', 'CASCADE', 'AURORA', 'NEXUS'];
 
 export const TestimonialsSection = () => {
   const ref = useRef(null);
@@ -45,7 +42,7 @@ export const TestimonialsSection = () => {
       setActiveIndex((prev) => (prev + 1) % testimonials.length);
     }, 6000);
     return () => clearInterval(interval);
-  }, []);
+  }, [testimonials.length]);
 
   const nextSlide = () => setActiveIndex((prev) => (prev + 1) % testimonials.length);
   const prevSlide = () => setActiveIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
@@ -106,6 +103,7 @@ export const TestimonialsSection = () => {
             className="flex gap-3"
           >
             <button
+              type="button"
               onClick={prevSlide}
               className="w-12 h-12 border border-foreground/20 flex items-center justify-center hover:border-accent hover:bg-accent/5 transition-all duration-300 group"
               aria-label="Previous testimonial"
@@ -113,6 +111,7 @@ export const TestimonialsSection = () => {
               <ChevronLeft className="w-5 h-5 group-hover:text-accent transition-colors" />
             </button>
             <button
+              type="button"
               onClick={nextSlide}
               className="w-12 h-12 border border-foreground/20 flex items-center justify-center hover:border-accent hover:bg-accent/5 transition-all duration-300 group"
               aria-label="Next testimonial"
@@ -170,8 +169,10 @@ export const TestimonialsSection = () => {
           <div className="flex justify-center gap-3 mt-8">
             {testimonials.map((_, index) => (
               <button
+                type="button"
                 key={index}
                 onClick={() => setActiveIndex(index)}
+                aria-label={`Show testimonial ${index + 1} of ${testimonials.length}`}
                 className="group relative h-2 transition-all duration-300"
               >
                 <div className={`w-12 h-full transition-all duration-300 ${
