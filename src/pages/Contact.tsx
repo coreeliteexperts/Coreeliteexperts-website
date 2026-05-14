@@ -28,9 +28,9 @@ const budgetOptions = [
 ];
 
 const contactInfo = [
-  { icon: Mail, label: 'Email', value: 'hello@studio.design', href: 'mailto:hello@studio.design' },
-  { icon: Phone, label: 'Phone', value: '+1 (555) 123-4567', href: 'tel:+15551234567' },
-  { icon: MapPin, label: 'Location', value: 'San Francisco, CA', href: null },
+  { icon: Mail, label: 'Email', value: 'info@coreeliteexperts.com', href: 'mailto:info@coreeliteexperts.com' },
+  { icon: Phone, label: 'Phone', value: '+92 3554475474', href: 'tel:+923554475474' },
+  { icon: MapPin, label: 'Location', value: 'Danyore, Gilgit-Baltistan, Pakistan', href: null },
 ];
 
 const Contact = () => {

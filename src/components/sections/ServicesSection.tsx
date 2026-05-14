@@ -1,43 +1,49 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
 import { AnimatedLine } from '@/components/AnimatedText';
-import { Palette, Code, Megaphone, Lightbulb, BarChart3, Globe } from 'lucide-react';
+import { Cloud, Code, Megaphone, Calculator, Palette, Clapperboard } from 'lucide-react';
 
 const services = [
   {
-    icon: Palette,
-    title: 'Brand Identity',
-    description: 'Creating distinctive visual identities that capture essence and resonate with audiences.',
+    icon: Cloud,
+    title: 'DevOps & Cloud Engineering',
+    description:
+      'Secure, scalable, and automated cloud infrastructure using AWS, Azure, GCP, Docker, Kubernetes, Terraform, and CI/CD pipelines.',
     number: '01',
   },
   {
     icon: Code,
-    title: 'Web Development',
-    description: 'Building performant, accessible, and beautifully crafted digital experiences.',
+    title: 'Software Development',
+    description:
+      'Custom web applications, APIs, dashboards, and business systems built for scalability, performance, and reliability.',
     number: '02',
+  },
+  {
+    icon: Calculator,
+    title: 'Accounting & Bookkeeping',
+    description:
+      'Professional bookkeeping, reconciliation, payroll support, and financial reporting solutions for modern businesses.',
+    number: '03',
   },
   {
     icon: Megaphone,
     title: 'Digital Marketing',
-    description: 'Strategic campaigns that amplify your message and drive measurable growth.',
-    number: '03',
-  },
-  {
-    icon: Lightbulb,
-    title: 'Creative Direction',
-    description: 'Guiding vision from concept to execution with purpose and precision.',
+    description:
+      'Growth-focused digital marketing solutions including SEO, social media management, email marketing, and campaign strategy.',
     number: '04',
   },
   {
-    icon: BarChart3,
-    title: 'Data Analytics',
-    description: 'Transforming insights into actionable strategies for continuous improvement.',
+    icon: Palette,
+    title: 'UI/UX & Graphic Design',
+    description:
+      'Modern interfaces, branding, dashboards, and creative assets designed to improve user experience and engagement.',
     number: '05',
   },
   {
-    icon: Globe,
-    title: 'Global Strategy',
-    description: 'Expanding reach across markets with culturally aware, localized approaches.',
+    icon: Clapperboard,
+    title: 'Video Editing & Media Production',
+    description:
+      'Professional video editing and creative media solutions for marketing, branding, and digital content creation.',
     number: '06',
   },
 ];
@@ -193,7 +199,7 @@ const ServiceCard = ({ service, index, activeIndex, setActiveIndex }: ServiceCar
 
             <AnimatedLine delay={0.3}>
               <h2 className="font-syne font-bold text-4xl sm:text-5xl md:text-6xl tracking-tight leading-[1.1]">
-                Crafting solutions that elevate brands.
+                Engineering Solutions That Drive Business Growth
               </h2>
             </AnimatedLine>
           </div>
@@ -202,9 +208,9 @@ const ServiceCard = ({ service, index, activeIndex, setActiveIndex }: ServiceCar
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ delay: 0.5 }}
-            className="text-muted-foreground max-w-md"
+            className="text-muted-foreground max-w-xl md:max-w-lg"
           >
-            We offer a comprehensive suite of services designed to transform your digital presence and drive meaningful results.
+            We provide scalable technology, operations, and digital solutions designed to improve performance, automate workflows, and help businesses grow efficiently.
           </motion.p>
         </div>
 

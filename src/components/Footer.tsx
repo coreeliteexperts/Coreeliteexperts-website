@@ -92,15 +92,15 @@ export const Footer = () => {
          <div className="lg:col-span-1 border-r border-border flex flex-col">
             <div className="flex-1 p-8 border-b border-border">
                <span className="font-mono text-xs uppercase tracking-widest text-muted-foreground mb-6 block">Contact</span>
-               <a href="mailto:hello@studio.com" className="block text-xl font-bold hover:text-accent transition-colors mb-2">hello@studio.com</a>
-               <a href="tel:+1234567890" className="block text-xl font-bold hover:text-accent transition-colors">+1 (555) 000-0000</a>
+               <a href="mailto:info@coreeliteexperts.com" className="block text-xl font-bold hover:text-accent transition-colors mb-2">info@coreeliteexperts.com</a>
+               <a href="tel:+923554475474" className="block text-xl font-bold hover:text-accent transition-colors">+92 3554475474</a>
             </div>
             
             <div className="flex-1 p-8 border-b border-border">
                <span className="font-mono text-xs uppercase tracking-widest text-muted-foreground mb-6 block">Location</span>
                <address className="not-italic text-lg text-muted-foreground">
-                  123 Innovation Dr.<br/>
-                  Tech City, NY 10012
+                  Danyore<br/>
+                  Gilgit-Baltistan, Pakistan
                </address>
             </div>
 

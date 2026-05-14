@@ -90,16 +90,6 @@ const values = [
   },
 ];
 
-const milestones = [
-  { year: '2018', event: 'Studio founded in San Francisco' },
-  { year: '2019', event: 'First Awwwards recognition' },
-  { year: '2020', event: 'Expanded to 10 team members' },
-  { year: '2021', event: 'Opened remote-first operations globally' },
-  { year: '2022', event: 'Reached 100+ completed projects' },
-  { year: '2023', event: 'Named Top 50 Design Agency' },
-  { year: '2024', event: 'Launched strategic partnerships program' },
-];
-
 const About = () => {
   const heroRef = useRef(null);
   const storyRef = useRef(null);
@@ -179,7 +169,7 @@ const About = () => {
             </motion.div>
 
             <div className="max-w-5xl">
-              {["We're a team of", 'dreamers &', 'makers'].map((text, index) => (
+              {['Building Systems', 'That Help', 'Businesses Scale'].map((text, index) => (
                 <div key={text} className="overflow-hidden">
                   <motion.h1
                     initial={{ y: '100%' }}
@@ -194,15 +184,6 @@ const About = () => {
                 </div>
               ))}
             </div>
-
-            <motion.p
-              initial={{ opacity: 0, y: 30 }}
-              animate={heroInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: 0.6, duration: 0.8 }}
-              className="text-lg md:text-xl text-muted-foreground max-w-xl mt-8"
-            >
-              Founded in 2018, we&apos;ve grown from a small studio into a globally distributed team united by our passion for exceptional digital experiences.
-            </motion.p>
           </div>
         </section>
 
@@ -210,7 +191,7 @@ const About = () => {
         <section ref={storyRef} className="py-24 md:py-32 bg-secondary/30 relative overflow-hidden">
           <div className="container-wide relative z-10">
             {/* Narrative Header */}
-            <div className="max-w-4xl mx-auto text-center mb-24">
+            <div className="max-w-4xl mx-auto text-center mb-16 md:mb-20">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={storyInView ? { opacity: 1, y: 0 } : {}}
@@ -222,57 +203,28 @@ const About = () => {
                 <span className="text-sm font-mono text-muted-foreground tracking-wider">OUR STORY</span>
               </motion.div>
 
-              <motion.h2 
+              <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={storyInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="font-syne font-bold text-4xl md:text-5xl lg:text-6xl mb-8 leading-tight"
-              >
-                Born from a belief that design can change everything.
-              </motion.h2>
-
-              <motion.div 
-                initial={{ opacity: 0, y: 30 }}
-                animate={storyInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.8, delay: 0.4 }}
-                className="space-y-6 text-lg text-muted-foreground leading-relaxed"
+                className="space-y-6 text-lg text-muted-foreground leading-relaxed text-left max-w-3xl mx-auto"
               >
                 <p>
-                  Studio began in a small San Francisco apartment with a simple mission: 
-                  to create digital experiences that truly matter. We were tired of seeing 
-                  beautiful design sacrificed for speed, and meaningful strategy lost to trends.
+                  Core Elite Experts (Private) Limited is a technology and operations company focused on helping startups, SMEs, and modern businesses improve execution, automate workflows, and scale efficiently.
                 </p>
                 <p>
-                  Today, we work with forward-thinking brands across the globe, from ambitious 
-                  startups to established enterprises. Our approach remains the same—every project 
-                  receives our full attention, creativity, and strategic thinking.
+                  We are a team of top-tier professionals delivering innovative, future-ready digital solutions. We specialize in IT, Cloud Computing, DevOps, Digital Marketing, and business support services designed to help companies operate more efficiently and scale with confidence.
+                </p>
+                <p>
+                  Based in Gilgit-Baltistan, Pakistan, our expertise includes DevOps Engineering, Cloud Infrastructure, Software Development, Accounting & Bookkeeping, UI/UX Design, Video Editing, and operational support services.
+                </p>
+                <p>
+                  Our approach combines technical expertise, structured execution, and scalable systems to solve real business challenges and support long-term growth.
+                </p>
+                <p>
+                  We believe modern businesses need more than isolated services — they need reliable systems, strong execution, and a team capable of managing technology, operations, and growth under one roof.
                 </p>
               </motion.div>
-            </div>
-
-            {/* Architectural Timeline Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-16">
-              {milestones.map((milestone, index) => (
-                <motion.div
-                  key={milestone.year}
-                  initial={{ opacity: 0, y: 40 }}
-                  animate={storyInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.6, delay: 0.5 + index * 0.1 }}
-                  className="group relative pt-8 border-t border-border hover:border-accent transition-colors duration-500"
-                >
-                  <div className="flex flex-col gap-4">
-                    <span className="text-5xl md:text-6xl font-syne font-bold text-foreground/20 group-hover:text-accent transition-colors duration-500">
-                      {milestone.year}
-                    </span>
-                    <p className="text-foreground/80 font-medium leading-relaxed max-w-xs group-hover:text-foreground transition-colors duration-300">
-                      {milestone.event}
-                    </p>
-                  </div>
-                  
-                  {/* Decorative dot */}
-                  <div className="absolute top-[-5px] right-0 w-2 h-2 rounded-full bg-accent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                </motion.div>
-              ))}
             </div>
           </div>
         </section>
@@ -414,12 +366,39 @@ const About = () => {
         {/* Stats Section */}
         <section className="py-24 md:py-32 relative overflow-hidden">
           <div className="container-wide">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-12">
+            <div className="flex flex-col lg:flex-row items-stretch justify-between gap-12 lg:gap-16 mb-16 md:mb-20">
+              <motion.div
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="border border-border bg-card/30 p-8 md:p-10 max-w-sm"
+              >
+                <span className="text-xs font-mono text-muted-foreground uppercase tracking-widest">ESTABLISHED</span>
+                <span className="block font-syne font-bold text-5xl md:text-6xl mt-2">2024</span>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                className="hidden lg:flex flex-1 items-center justify-end"
+                style={{ writingMode: 'vertical-rl', textOrientation: 'mixed' }}
+              >
+                <span className="text-xs font-mono text-muted-foreground tracking-[0.25em]">
+                  ENGINEERING SCALABLE DIGITAL SOLUTIONS
+                </span>
+              </motion.div>
+            </div>
+            <p className="lg:hidden text-center text-xs font-mono text-muted-foreground tracking-widest mb-12 uppercase">
+              Engineering scalable digital solutions
+            </p>
+
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-12 max-w-5xl mx-auto">
               {[
-                { number: '100', suffix: '+', label: 'Projects' },
-                { number: '50', suffix: '+', label: 'Clients' },
-                { number: '15', suffix: '+', label: 'Awards' },
-                { number: '06', suffix: '', label: 'Years' },
+                { number: '150', suffix: '+', label: 'Projects Delivered' },
+                { number: '50', suffix: '+', label: 'Business Clients' },
+                { number: '30', suffix: '+', label: 'Team Members' },
               ].map((stat, index) => (
                 <motion.div
                   key={stat.label}

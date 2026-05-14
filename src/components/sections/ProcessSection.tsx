@@ -1,38 +1,43 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { AnimatedLine } from '@/components/AnimatedText';
-import { Compass, Target, Palette, Code, Rocket } from 'lucide-react';
+import { Building2, Target, Layers, Zap, TrendingUp } from 'lucide-react';
 
 const steps = [
   {
     number: '01',
-    title: 'Discovery',
-    description: 'We begin by understanding your vision, goals, and audience. Deep research and strategic analysis form the foundation of every project.',
-    icon: Compass,
+    title: 'Understanding the Business',
+    description:
+      'Every project starts with understanding the business itself — goals, challenges, operations, audience, and growth direction. We focus on identifying what is slowing execution and where systems can improve performance.',
+    icon: Building2,
   },
   {
     number: '02',
-    title: 'Strategy',
-    description: 'Insights transform into actionable plans. We define the approach, set milestones, and align on success metrics.',
+    title: 'Building the Right Strategy',
+    description:
+      'Once we understand the business, we create a clear execution strategy. This includes technical planning, operational workflows, timelines, marketing direction, financial processes, and scalable infrastructure planning.',
     icon: Target,
   },
   {
     number: '03',
-    title: 'Design',
-    description: 'Ideas take visual form. Our design process is iterative, collaborative, and focused on creating meaningful experiences.',
-    icon: Palette,
+    title: 'Designing Scalable Systems',
+    description:
+      'Our team designs practical systems that support long-term growth — from cloud infrastructure and software platforms to UI/UX, accounting workflows, digital assets, and operational structures.',
+    icon: Layers,
   },
   {
     number: '04',
-    title: 'Development',
-    description: 'Designs become reality. We build with precision, performance, and scalability as core principles.',
-    icon: Code,
+    title: 'Execution & Implementation',
+    description:
+      'This is where strategy becomes reality. We deploy cloud systems, automate workflows, build applications, manage operations, execute marketing campaigns, and deliver solutions with performance and reliability in mind.',
+    icon: Zap,
   },
   {
     number: '05',
-    title: 'Launch',
-    description: 'The culmination of our work. We ensure a seamless launch and provide ongoing support for continued success.',
-    icon: Rocket,
+    title: 'Optimization & Long-Term Support',
+    description:
+      'Business growth requires continuous improvement. We monitor systems, optimize workflows, improve performance, provide ongoing support, and help businesses scale with confidence over time.',
+    icon: TrendingUp,
   },
 ];
 
@@ -44,7 +49,7 @@ export const ProcessSection = () => {
     <section id="process" ref={sectionRef} className="py-24 md:py-32 bg-background relative">
       <div className="container-wide">
         {/* Header */}
-        <div className="mb-24 md:mb-32">
+        <div className="mb-24 md:mb-32 max-w-4xl">
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -56,10 +61,19 @@ export const ProcessSection = () => {
           </motion.div>
           
           <AnimatedLine>
-            <h2 className="font-syne font-bold text-5xl md:text-7xl max-w-4xl tracking-tight leading-[0.9]">
-              From concept to <span className="text-accent">reality.</span>
+            <h2 className="font-syne font-bold text-5xl md:text-7xl tracking-tight leading-[0.95] mb-8">
+              How We Build, Execute, and Scale Solutions
             </h2>
           </AnimatedLine>
+
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ delay: 0.15, duration: 0.6 }}
+            className="text-lg text-muted-foreground leading-relaxed max-w-3xl"
+          >
+            At Core Elite Experts, we don&apos;t just deliver services — we build structured systems that help businesses operate efficiently and grow sustainably.
+          </motion.p>
         </div>
 
         {/* Stacking Cards Container */}
@@ -99,7 +113,7 @@ export const ProcessSection = () => {
                        <h3 className="text-3xl md:text-4xl font-syne font-bold mb-6 group-hover:translate-x-2 transition-transform duration-300">
                           {step.title}
                        </h3>
-                       <p className="text-lg text-muted-foreground leading-relaxed max-w-md">
+                       <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl">
                           {step.description}
                        </p>
                     </div>

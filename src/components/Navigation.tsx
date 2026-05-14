@@ -440,8 +440,8 @@ export const Navigation = () => {
               >
                 <div className="text-sm text-muted-foreground">
                   <p>Ready to start a project?</p>
-                  <a href="mailto:hello@studio.design" className="text-foreground hover:text-accent transition-colors">
-                    hello@studio.design
+                  <a href="mailto:info@coreeliteexperts.com" className="text-foreground hover:text-accent transition-colors">
+                    info@coreeliteexperts.com
                   </a>
                 </div>
                 
