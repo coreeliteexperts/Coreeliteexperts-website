@@ -5,6 +5,7 @@ import { ArrowRight, Linkedin, Twitter } from 'lucide-react';
 import Footer from '@/components/Footer';
 import MagneticButton from '@/components/MagneticButton';
 import Navigation from '@/components/Navigation';
+import { UnsplashPicture } from '@/components/UnsplashPicture';
 
 const teamMembers = [
   {
@@ -320,10 +321,13 @@ const About = () => {
                     className="flex-none w-[280px] md:w-[360px] snap-center group relative overflow-hidden rounded-sm cursor-pointer"
                   >
                     <div className="aspect-[3/4] overflow-hidden">
-                      <img
+                      <UnsplashPicture
                         src={member.image}
                         alt={member.name}
+                        widths={[280, 360, 480, 720]}
+                        sizes="(max-width: 768px) 280px, 360px"
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                        loading="lazy"
                       />
                       {/* Gradient Overlay */}
                       <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300" />

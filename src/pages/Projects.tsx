@@ -7,6 +7,7 @@ import Footer from '@/components/Footer';
 import Navigation from '@/components/Navigation';
 import { ArrowUpRight, ArrowRight, Search } from 'lucide-react';
 import MagneticButton from '@/components/MagneticButton';
+import { UnsplashPicture } from '@/components/UnsplashPicture';
 
 const ProjectCard = ({ project, index }: { project: typeof projects[0], index: number }) => {
   const [isHovered, setIsHovered] = useState(false);
@@ -28,13 +29,20 @@ const ProjectCard = ({ project, index }: { project: typeof projects[0], index: n
       >
         {/* Image Container */}
         <div className="relative overflow-hidden aspect-[4/3] mb-8 rounded-sm">
-          <motion.img
-            src={project.thumbnail}
-            alt={project.title}
-            className="w-full h-full object-cover"
+          <motion.div
+            className="w-full h-full"
             animate={{ scale: isHovered ? 1.05 : 1 }}
             transition={{ duration: 0.7, ease: [0.19, 1, 0.22, 1] }}
-          />
+          >
+            <UnsplashPicture
+              src={project.thumbnail}
+              alt={project.title}
+              widths={[400, 640, 800, 1200]}
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className="w-full h-full object-cover"
+              loading="lazy"
+            />
+          </motion.div>
           
           {/* Hover Overlay - Subtle Tint */}
           <motion.div 

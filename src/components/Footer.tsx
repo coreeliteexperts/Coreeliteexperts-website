@@ -123,7 +123,7 @@ export const Footer = () => {
 
          {/* Column 4: Big CTA */}
          <div className="lg:col-span-1 p-8 lg:p-12 flex flex-col justify-center items-center text-center bg-foreground/5 hover:bg-accent transition-colors duration-500 group cursor-pointer relative overflow-hidden">
-            <Link to="/contact" className="absolute inset-0 z-20"></Link>
+            <Link to="/contact" className="absolute inset-0 z-20" aria-label="Contact us to start a project" />
             
             {/* Animated Background Text */}
             <div className="absolute inset-0 flex flex-col justify-center opacity-10 pointer-events-none select-none overflow-hidden group-hover:opacity-20 transition-opacity">

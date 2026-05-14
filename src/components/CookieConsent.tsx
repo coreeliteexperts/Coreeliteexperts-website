@@ -9,11 +9,25 @@ const CookieConsent = () => {
 
   useEffect(() => {
     const consent = localStorage.getItem('cookie-consent');
-    if (!consent) {
-      // Show after a short delay for better UX
-      const timer = setTimeout(() => setIsVisible(true), 1500);
-      return () => clearTimeout(timer);
+    if (consent) return;
+
+    const show = () => setIsVisible(true);
+
+    let idleId: number | undefined;
+    let timeoutId: ReturnType<typeof setTimeout> | undefined;
+
+    if (typeof window.requestIdleCallback === 'function') {
+      idleId = window.requestIdleCallback(show, { timeout: 4000 });
+    } else {
+      timeoutId = window.setTimeout(show, 1500);
     }
+
+    return () => {
+      if (idleId !== undefined && typeof window.cancelIdleCallback === 'function') {
+        window.cancelIdleCallback(idleId);
+      }
+      if (timeoutId) clearTimeout(timeoutId);
+    };
   }, []);
 
   const handleAccept = () => {
@@ -61,7 +75,7 @@ const CookieConsent = () => {
                     to="/privacy-policy" 
                     className="text-primary hover:underline"
                   >
-                    Learn more
+                    Learn more about our privacy policy
                   </Link>
                 </p>
                 

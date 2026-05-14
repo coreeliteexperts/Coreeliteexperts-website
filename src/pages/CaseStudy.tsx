@@ -7,6 +7,7 @@ import { getProjectById, projects } from '@/data/projects';
 import CustomCursor from '@/components/CustomCursor';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import { UnsplashPicture } from '@/components/UnsplashPicture';
 
 const CaseStudy = () => {
   const { id } = useParams<{ id: string }>();
@@ -125,10 +126,14 @@ const CaseStudy = () => {
                  transition={{ duration: 0.8 }}
                  className="aspect-[16/9] md:aspect-[21/9] w-full relative"
                >
-                 <img 
-                   src={project.heroImage} 
+                 <UnsplashPicture
+                   src={project.heroImage}
                    alt={project.title}
+                   widths={[640, 960, 1280, 1600, 1920]}
+                   sizes="100vw"
                    className="w-full h-full object-cover"
+                   loading="eager"
+                   fetchPriority="high"
                  />
                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                </motion.div>
@@ -224,10 +229,13 @@ const CaseStudy = () => {
                               i === 0 ? 'md:col-span-2 aspect-[21/9]' : 'aspect-square'
                            }`}
                         >
-                           <img 
-                              src={image} 
-                              alt={`Gallery image ${i+1}`} 
-                              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
+                           <UnsplashPicture
+                              src={image}
+                              alt={`Gallery image ${i + 1}`}
+                              widths={[400, 640, 960, 1200]}
+                              sizes={i === 0 ? '(max-width: 768px) 100vw, 90vw' : '(max-width: 768px) 100vw, 45vw'}
+                              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                              loading="lazy"
                            />
                            <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                               <div className="px-4 py-2 bg-background text-foreground text-xs font-bold uppercase tracking-widest transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
@@ -285,10 +293,13 @@ const CaseStudy = () => {
                >
                   <div className="grid md:grid-cols-2 gap-8 items-center">
                      <div className="aspect-[16/9] overflow-hidden bg-foreground/5">
-                        <img
+                        <UnsplashPicture
                           src={nextProject.heroImage}
                           alt={nextProject.title}
+                          widths={[640, 960, 1280, 1600]}
+                          sizes="(max-width: 768px) 100vw, 45vw"
                           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                          loading="lazy"
                         />
                      </div>
                      <div>
