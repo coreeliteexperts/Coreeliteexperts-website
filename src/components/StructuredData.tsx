@@ -1,4 +1,5 @@
 import { Helmet } from 'react-helmet-async';
+import { SITE } from '@/config/site';
 
 interface OrganizationSchemaProps {
   name?: string;
@@ -47,10 +48,10 @@ interface BreadcrumbItem {
 
 // Organization Schema - for the agency
 export const OrganizationSchema = ({
-  name = 'STUDIO',
-  url = 'https://studio.design',
-  logo = 'https://studio.design/logo.png',
-  description = 'Award-winning digital design agency specializing in brand identity, web design, and digital campaigns.',
+  name = SITE.name,
+  url = SITE.url,
+  logo = `${SITE.url}${SITE.logo}`,
+  description = SITE.description,
   email = 'info@coreeliteexperts.com',
   address = {
     streetAddress: 'Danyore',
@@ -104,8 +105,8 @@ export const ArticleSchema = ({
   dateModified,
   author,
   publisher = {
-    name: 'STUDIO',
-    logo: 'https://studio.design/logo.png',
+    name: SITE.name,
+    logo: `${SITE.url}${SITE.logo}`,
   },
 }: ArticleSchemaProps) => {
   const schema = {
@@ -146,7 +147,7 @@ export const ArticleSchema = ({
 export const ServiceSchema = ({
   name,
   description,
-  provider = 'STUDIO',
+  provider = SITE.name,
   areaServed = 'Worldwide',
   priceRange = '$$$$',
 }: ServiceSchemaProps) => {
@@ -195,12 +196,12 @@ export const WebsiteSchema = () => {
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    name: 'STUDIO',
-    url: 'https://studio.design',
-    description: 'Award-winning digital design agency',
+    name: SITE.name,
+    url: SITE.url,
+    description: SITE.description,
     potentialAction: {
       '@type': 'SearchAction',
-      target: 'https://studio.design/search?q={search_term_string}',
+      target: `${SITE.url}/search?q={search_term_string}`,
       'query-input': 'required name=search_term_string',
     },
   };
@@ -217,10 +218,10 @@ export const ProfessionalServiceSchema = () => {
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'ProfessionalService',
-    name: 'STUDIO',
-    image: 'https://studio.design/og-image.jpg',
-    '@id': 'https://studio.design',
-    url: 'https://studio.design',
+    name: SITE.fullName,
+    image: `${SITE.url}${SITE.logo}`,
+    '@id': SITE.url,
+    url: SITE.url,
     telephone: '+92-355-4475474',
     address: {
       '@type': 'PostalAddress',

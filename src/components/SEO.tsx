@@ -1,4 +1,5 @@
 import { Helmet } from 'react-helmet-async';
+import { SITE } from '@/config/site';
 import { optimizeUnsplashUrl } from '@/lib/unsplashImage';
 
 interface SEOProps {
@@ -15,15 +16,15 @@ interface SEOProps {
 }
 
 const defaultMeta = {
-  siteName: 'STUDIO',
-  title: 'STUDIO | Digital Design Agency',
-  description: 'We craft exceptional digital experiences through strategic design, innovative development, and creative storytelling. Transform your brand with our award-winning team.',
+  siteName: SITE.name,
+  title: SITE.title,
+  description: SITE.description,
   image: optimizeUnsplashUrl(
     'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80',
     { width: 1200 },
   ),
-  url: 'https://studio.design',
-  twitterHandle: '@studiodesign',
+  url: SITE.url,
+  twitterHandle: SITE.twitterHandle,
   locale: 'en_US',
 };
 
@@ -39,13 +40,14 @@ const SEO = ({
   section,
   tags = [],
 }: SEOProps) => {
-  const fullTitle = title ? `${title} | ${defaultMeta.siteName}` : defaultMeta.title;
+  const documentTitle = defaultMeta.siteName;
+  const socialTitle = title ?? defaultMeta.siteName;
 
   return (
     <Helmet>
       {/* Primary Meta Tags */}
-      <title>{fullTitle}</title>
-      <meta name="title" content={fullTitle} />
+      <title>{documentTitle}</title>
+      <meta name="title" content={documentTitle} />
       <meta name="description" content={description} />
       <meta name="author" content={author || defaultMeta.siteName} />
       <meta name="robots" content="index, follow" />
@@ -54,11 +56,15 @@ const SEO = ({
       
       {/* Canonical URL */}
       <link rel="canonical" href={url} />
+      <link rel="icon" type="image/svg+xml" href={SITE.favicon} />
+      <link rel="icon" type="image/png" href={SITE.faviconPng} />
+      <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+      <link rel="apple-touch-icon" href={SITE.faviconPng} />
 
       {/* Open Graph / Facebook */}
       <meta property="og:type" content={type} />
       <meta property="og:url" content={url} />
-      <meta property="og:title" content={fullTitle} />
+      <meta property="og:title" content={socialTitle} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={image} />
       <meta property="og:image:width" content="1200" />
@@ -86,7 +92,7 @@ const SEO = ({
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:url" content={url} />
-      <meta name="twitter:title" content={fullTitle} />
+      <meta name="twitter:title" content={socialTitle} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={image} />
       <meta name="twitter:site" content={defaultMeta.twitterHandle} />

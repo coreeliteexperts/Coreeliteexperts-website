@@ -5,6 +5,7 @@ import CustomCursor from '@/components/CustomCursor';
 import HeroSection from '@/components/sections/HeroSection';
 import Footer from '@/components/Footer';
 import SEO from '@/components/SEO';
+import { SITE } from '@/config/site';
 import { OrganizationSchema, WebsiteSchema, ProfessionalServiceSchema } from '@/components/StructuredData';
 
 const AboutSection = lazy(() => import('@/components/sections/AboutSection'));
@@ -21,11 +22,7 @@ const SectionFallback = () => (
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
-      <SEO
-        title="Award-Winning Digital Agency"
-        description="We craft exceptional digital experiences through strategic design, innovative development, and creative storytelling. Transform your brand with our award-winning team."
-        url="https://studio.design"
-      />
+      <SEO description={SITE.description} url={SITE.url} />
       <OrganizationSchema />
       <WebsiteSchema />
       <ProfessionalServiceSchema />
