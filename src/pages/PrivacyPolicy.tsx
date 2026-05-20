@@ -14,7 +14,7 @@ const PrivacyPolicy = () => {
       <SEO 
         title="Privacy Policy"
         description="Read our privacy policy to understand how we collect, use, and protect your personal information."
-        url="https://studio.design/privacy-policy"
+        url="https://coreeliteexperts.com/privacy-policy"
       />
       
       <main className="min-h-screen bg-background pt-32 pb-20">

@@ -14,7 +14,7 @@ const TermsOfService = () => {
       <SEO 
         title="Terms of Service"
         description="Read our terms of service to understand the rules and guidelines for using our services."
-        url="https://studio.design/terms-of-service"
+        url="https://coreeliteexperts.com/terms-of-service"
       />
       
       <main className="min-h-screen bg-background pt-32 pb-20">

@@ -1,5 +1,5 @@
-# STUDIO - Digital Design Agency
-# https://studio.design
+# CEE - Core Elite Experts
+# https://coreeliteexperts.com
 
 User-agent: Googlebot
 Allow: /
@@ -17,7 +17,7 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://studio.design/sitemap.xml
+Sitemap: https://coreeliteexperts.com/sitemap.xml
 
 # Crawl-delay for respectful crawling
 Crawl-delay: 1

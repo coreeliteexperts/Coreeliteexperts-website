@@ -3,6 +3,7 @@ import { motion, useScroll, useSpring } from 'framer-motion';
 import { ArrowLeft, ArrowRight, Share2, Facebook, Twitter, Linkedin } from 'lucide-react';
 import { getBlogPostById, getRelatedPosts } from '@/data/blog';
 import SEO from '@/components/SEO';
+import { SITE } from '@/config/site';
 import { ArticleSchema, BreadcrumbSchema } from '@/components/StructuredData';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
@@ -44,7 +45,7 @@ const BlogPost = () => {
         title={post.title}
         description={post.excerpt}
         image={optimizeUnsplashUrl(post.image, { width: 1200 })}
-        url={`https://studio.design/blog/${post.id}`}
+        url={`${SITE.url}/blog/${post.id}`}
         type="article"
         author={post.author.name}
         publishedTime={post.date}
@@ -60,9 +61,9 @@ const BlogPost = () => {
       />
       <BreadcrumbSchema
         items={[
-          { name: 'Home', url: 'https://studio.design' },
-          { name: 'Blog', url: 'https://studio.design/blog' },
-          { name: post.title, url: `https://studio.design/blog/${post.id}` },
+          { name: 'Home', url: SITE.url },
+          { name: 'Blog', url: `${SITE.url}/blog` },
+          { name: post.title, url: `${SITE.url}/blog/${post.id}` },
         ]}
       />
       
