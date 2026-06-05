@@ -6,6 +6,9 @@ import Footer from '@/components/Footer';
 import MagneticButton from '@/components/MagneticButton';
 import Navigation from '@/components/Navigation';
 import { UnsplashPicture } from '@/components/UnsplashPicture';
+import SEO from '@/components/SEO';
+import { PAGE_SEO, pageUrl } from '@/config/seo';
+import { BreadcrumbSchema, OrganizationSchema } from '@/components/StructuredData';
 
 const teamMembers = [
   {
@@ -113,6 +116,19 @@ const About = () => {
 
   return (
       <div className="min-h-screen bg-background" onMouseMove={handleMouseMove}>
+        <SEO
+          title={PAGE_SEO.about.title}
+          description={PAGE_SEO.about.description}
+          path={PAGE_SEO.about.path}
+          keywords={PAGE_SEO.about.keywords}
+        />
+        <OrganizationSchema />
+        <BreadcrumbSchema
+          items={[
+            { name: 'Home', url: pageUrl('/') },
+            { name: 'About', url: pageUrl('/about') },
+          ]}
+        />
         <Navigation />
 
         {/* Hero Section */}

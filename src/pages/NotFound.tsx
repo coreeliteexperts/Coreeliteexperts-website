@@ -1,6 +1,7 @@
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import Navigation from "@/components/Navigation";
+import SEO from "@/components/SEO";
 
 const NotFound = () => {
   const location = useLocation();
@@ -11,6 +12,11 @@ const NotFound = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="Page Not Found"
+        description="The page you are looking for does not exist on Core Elite Experts."
+        noindex
+      />
       <Navigation />
       <div className="flex min-h-[80vh] items-center justify-center">
       <div className="text-center">

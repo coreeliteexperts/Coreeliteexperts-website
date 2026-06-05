@@ -5,6 +5,9 @@ import { ArrowRight, Check } from 'lucide-react';
 import Footer from '@/components/Footer';
 import MagneticButton from '@/components/MagneticButton';
 import Navigation from '@/components/Navigation';
+import SEO from '@/components/SEO';
+import { PAGE_SEO, pageUrl } from '@/config/seo';
+import { BreadcrumbSchema, ServicesListSchema } from '@/components/StructuredData';
 
 type ServiceOffering = {
   id: string;
@@ -187,6 +190,19 @@ const Services = () => {
 
   return (
     <div className="min-h-screen bg-background" onMouseMove={handleMouseMove}>
+      <SEO
+        title={PAGE_SEO.services.title}
+        description={PAGE_SEO.services.description}
+        path={PAGE_SEO.services.path}
+        keywords={PAGE_SEO.services.keywords}
+      />
+      <ServicesListSchema />
+      <BreadcrumbSchema
+        items={[
+          { name: 'Home', url: pageUrl('/') },
+          { name: 'Services', url: pageUrl('/services') },
+        ]}
+      />
       <Navigation />
 
       {/* Hero */}
