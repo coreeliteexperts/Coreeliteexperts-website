@@ -50,7 +50,8 @@ const BlogPost = () => {
         author={post.author.name}
         publishedTime={post.date}
         section={post.category}
-        tags={[post.category, 'Design', 'Digital']}
+        tags={[post.category, 'Freelancing', 'Core Elite Experts', 'Gilgit Pakistan']}
+        keywords={[post.category, 'freelancing services', 'DevOps', 'Core Elite Experts']}
       />
       <ArticleSchema
         headline={post.title}

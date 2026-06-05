@@ -5,8 +5,8 @@ import CustomCursor from '@/components/CustomCursor';
 import HeroSection from '@/components/sections/HeroSection';
 import Footer from '@/components/Footer';
 import SEO from '@/components/SEO';
-import { SITE } from '@/config/site';
-import { OrganizationSchema, WebsiteSchema, ProfessionalServiceSchema } from '@/components/StructuredData';
+import { PAGE_SEO } from '@/config/seo';
+import { OrganizationSchema, WebsiteSchema, LocalBusinessSchema } from '@/components/StructuredData';
 
 const AboutSection = lazy(() => import('@/components/sections/AboutSection'));
 const ServicesSection = lazy(() => import('@/components/sections/ServicesSection'));
@@ -22,10 +22,15 @@ const SectionFallback = () => (
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
-      <SEO description={SITE.description} url={SITE.url} />
+      <SEO
+        title={PAGE_SEO.home.title}
+        description={PAGE_SEO.home.description}
+        path={PAGE_SEO.home.path}
+        keywords={PAGE_SEO.home.keywords}
+      />
       <OrganizationSchema />
       <WebsiteSchema />
-      <ProfessionalServiceSchema />
+      <LocalBusinessSchema />
 
       <CustomCursor />
 

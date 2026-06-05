@@ -8,6 +8,9 @@ import Navigation from '@/components/Navigation';
 import { ArrowUpRight, ArrowRight, Search } from 'lucide-react';
 import MagneticButton from '@/components/MagneticButton';
 import { UnsplashPicture } from '@/components/UnsplashPicture';
+import SEO from '@/components/SEO';
+import { PAGE_SEO, pageUrl } from '@/config/seo';
+import { BreadcrumbSchema } from '@/components/StructuredData';
 
 const ProjectCard = ({ project, index }: { project: typeof projects[0], index: number }) => {
   const [isHovered, setIsHovered] = useState(false);
@@ -134,6 +137,18 @@ const Projects = () => {
 
   return (
     <div className="min-h-screen bg-background" onMouseMove={handleMouseMove}>
+      <SEO
+        title={PAGE_SEO.work.title}
+        description={PAGE_SEO.work.description}
+        path={PAGE_SEO.work.path}
+        keywords={PAGE_SEO.work.keywords}
+      />
+      <BreadcrumbSchema
+        items={[
+          { name: 'Home', url: pageUrl('/') },
+          { name: 'Work', url: pageUrl('/work') },
+        ]}
+      />
       <Navigation />
 
       {/* Hero Section */}

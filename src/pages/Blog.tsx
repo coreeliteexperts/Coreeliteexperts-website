@@ -9,6 +9,9 @@ import { UnsplashPicture } from '@/components/UnsplashPicture';
 import { optimizeUnsplashUrl } from '@/lib/unsplashImage';
 import Footer from '@/components/Footer';
 import Navigation from '@/components/Navigation';
+import SEO from '@/components/SEO';
+import { PAGE_SEO, pageUrl } from '@/config/seo';
+import { BreadcrumbSchema } from '@/components/StructuredData';
 
 const categories = ['All', ...Array.from(new Set(blogPosts.map(p => p.category)))];
 
@@ -56,6 +59,18 @@ const Blog = () => {
 
   return (
       <div className="min-h-screen bg-background" onMouseMove={handleMouseMove}>
+        <SEO
+          title={PAGE_SEO.blog.title}
+          description={PAGE_SEO.blog.description}
+          path={PAGE_SEO.blog.path}
+          keywords={PAGE_SEO.blog.keywords}
+        />
+        <BreadcrumbSchema
+          items={[
+            { name: 'Home', url: pageUrl('/') },
+            { name: 'Blog', url: pageUrl('/blog') },
+          ]}
+        />
         <Navigation />
 
         {/* Hero Section */}

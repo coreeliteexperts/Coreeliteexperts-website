@@ -1,78 +1,76 @@
 import { Helmet } from 'react-helmet-async';
 import { SITE } from '@/config/site';
-import { optimizeUnsplashUrl } from '@/lib/unsplashImage';
+import { pageTitle, pageUrl } from '@/config/seo';
 
 interface SEOProps {
   title?: string;
   description?: string;
   image?: string;
   url?: string;
+  path?: string;
   type?: 'website' | 'article' | 'profile';
   author?: string;
   publishedTime?: string;
   modifiedTime?: string;
   section?: string;
   tags?: string[];
+  keywords?: string[];
+  noindex?: boolean;
 }
-
-const defaultMeta = {
-  siteName: SITE.name,
-  title: SITE.title,
-  description: SITE.description,
-  image: optimizeUnsplashUrl(
-    'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80',
-    { width: 1200 },
-  ),
-  url: SITE.url,
-  twitterHandle: SITE.twitterHandle,
-  locale: 'en_US',
-};
 
 const SEO = ({
   title,
-  description = defaultMeta.description,
-  image = defaultMeta.image,
-  url = defaultMeta.url,
+  description = SITE.description,
+  image = `${SITE.url}${SITE.ogImage}`,
+  url,
+  path = '/',
   type = 'website',
   author,
   publishedTime,
   modifiedTime,
   section,
   tags = [],
+  keywords = [...SITE.keywords],
+  noindex = false,
 }: SEOProps) => {
-  const documentTitle = defaultMeta.siteName;
-  const socialTitle = title ?? defaultMeta.siteName;
+  const canonicalUrl = url ?? pageUrl(path);
+  const documentTitle = title ? pageTitle(title) : SITE.title;
+  const socialTitle = title ?? SITE.fullName;
+  const keywordContent = keywords.join(', ');
+  const robots = noindex ? 'noindex, nofollow' : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1';
 
   return (
     <Helmet>
-      {/* Primary Meta Tags */}
+      <html lang="en" />
       <title>{documentTitle}</title>
       <meta name="title" content={documentTitle} />
       <meta name="description" content={description} />
-      <meta name="author" content={author || defaultMeta.siteName} />
-      <meta name="robots" content="index, follow" />
-      <meta name="language" content="English" />
-      <meta name="revisit-after" content="7 days" />
-      
-      {/* Canonical URL */}
-      <link rel="canonical" href={url} />
+      <meta name="author" content={author || SITE.fullName} />
+      <meta name="robots" content={robots} />
+      <meta name="language" content={SITE.language} />
+      <meta name="keywords" content={keywordContent} />
+      <meta name="geo.region" content={`${SITE.location.countryCode}-${SITE.location.region}`} />
+      <meta name="geo.placename" content={SITE.location.city} />
+      <meta name="geo.position" content={`${SITE.location.latitude};${SITE.location.longitude}`} />
+      <meta name="ICBM" content={`${SITE.location.latitude}, ${SITE.location.longitude}`} />
+
+      <link rel="canonical" href={canonicalUrl} />
       <link rel="icon" type="image/svg+xml" href={SITE.favicon} />
       <link rel="icon" type="image/png" href={SITE.faviconPng} />
       <link rel="icon" type="image/x-icon" href="/favicon.ico" />
       <link rel="apple-touch-icon" href={SITE.faviconPng} />
 
-      {/* Open Graph / Facebook */}
       <meta property="og:type" content={type} />
-      <meta property="og:url" content={url} />
+      <meta property="og:url" content={canonicalUrl} />
       <meta property="og:title" content={socialTitle} />
       <meta property="og:description" content={description} />
-      <meta property="og:image" content={image} />
+      <meta property="og:image" content={image.startsWith('http') ? image : `${SITE.url}${image}`} />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
-      <meta property="og:site_name" content={defaultMeta.siteName} />
-      <meta property="og:locale" content={defaultMeta.locale} />
+      <meta property="og:site_name" content={SITE.fullName} />
+      <meta property="og:locale" content={SITE.locale} />
+      <meta property="og:locale:alternate" content="en_US" />
 
-      {/* Article specific (for blog posts) */}
       {type === 'article' && publishedTime && (
         <meta property="article:published_time" content={publishedTime} />
       )}
@@ -85,23 +83,24 @@ const SEO = ({
       {type === 'article' && section && (
         <meta property="article:section" content={section} />
       )}
-      {type === 'article' && tags.map((tag, index) => (
-        <meta key={index} property="article:tag" content={tag} />
-      ))}
+      {type === 'article' &&
+        tags.map((tag) => <meta key={tag} property="article:tag" content={tag} />)}
 
-      {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:url" content={url} />
+      <meta name="twitter:url" content={canonicalUrl} />
       <meta name="twitter:title" content={socialTitle} />
       <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={image} />
-      <meta name="twitter:site" content={defaultMeta.twitterHandle} />
-      <meta name="twitter:creator" content={defaultMeta.twitterHandle} />
+      <meta
+        name="twitter:image"
+        content={image.startsWith('http') ? image : `${SITE.url}${image}`}
+      />
+      <meta name="twitter:site" content={SITE.twitterHandle} />
+      <meta name="twitter:creator" content={SITE.twitterHandle} />
 
-      {/* Additional SEO */}
       <meta name="theme-color" content="#0a0a0a" />
       <meta name="apple-mobile-web-app-capable" content="yes" />
       <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+      <meta name="application-name" content={SITE.name} />
     </Helmet>
   );
 };

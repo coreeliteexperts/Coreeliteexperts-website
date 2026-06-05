@@ -1,13 +1,17 @@
 import { useEffect, useRef } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import { motion, useScroll, useSpring, useInView } from 'framer-motion';
-import { Helmet } from 'react-helmet-async';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { getProjectById, projects } from '@/data/projects';
 import CustomCursor from '@/components/CustomCursor';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { UnsplashPicture } from '@/components/UnsplashPicture';
+import SEO from '@/components/SEO';
+import { pageUrl } from '@/config/seo';
+import { BreadcrumbSchema } from '@/components/StructuredData';
+import { SITE } from '@/config/site';
+import { optimizeUnsplashUrl } from '@/lib/unsplashImage';
 
 const CaseStudy = () => {
   const { id } = useParams<{ id: string }>();
@@ -52,10 +56,20 @@ const CaseStudy = () => {
   return (
       <div className="min-h-screen bg-background selection:bg-accent/20 flex flex-col">
       <Navigation />
-      <Helmet>
-        <title>CEE</title>
-        <meta name="description" content={project.description} />
-      </Helmet>
+      <SEO
+        title={`${project.title} Case Study`}
+        description={project.description}
+        path={`/work/${project.id}`}
+        image={optimizeUnsplashUrl(project.heroImage, { width: 1200 })}
+        keywords={[project.category, 'freelancing project', 'Core Elite Experts portfolio', 'Gilgit Pakistan']}
+      />
+      <BreadcrumbSchema
+        items={[
+          { name: 'Home', url: pageUrl('/') },
+          { name: 'Work', url: pageUrl('/work') },
+          { name: project.title, url: `${SITE.url}/work/${project.id}` },
+        ]}
+      />
 
       <CustomCursor />
 

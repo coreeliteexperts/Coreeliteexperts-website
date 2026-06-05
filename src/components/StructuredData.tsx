@@ -7,6 +7,8 @@ interface OrganizationSchemaProps {
   logo?: string;
   description?: string;
   email?: string;
+  telephone?: string;
+  foundingDate?: string;
   address?: {
     streetAddress?: string;
     addressLocality?: string;
@@ -46,46 +48,66 @@ interface BreadcrumbItem {
   url: string;
 }
 
-// Organization Schema - for the agency
+const postalAddress = {
+  '@type': 'PostalAddress',
+  streetAddress: SITE.location.streetAddress,
+  addressLocality: SITE.location.city,
+  addressRegion: SITE.location.region,
+  postalCode: SITE.location.postalCode,
+  addressCountry: SITE.location.countryCode,
+};
+
+const geoCoordinates = {
+  '@type': 'GeoCoordinates',
+  latitude: SITE.location.latitude,
+  longitude: SITE.location.longitude,
+};
+
+const sameAs = Object.values(SITE.social).filter(Boolean);
+
 export const OrganizationSchema = ({
-  name = SITE.name,
+  name = SITE.fullName,
   url = SITE.url,
   logo = `${SITE.url}${SITE.logo}`,
   description = SITE.description,
-  email = 'info@coreeliteexperts.com',
+  email = SITE.contact.email,
+  telephone = SITE.contact.phone,
+  foundingDate = SITE.founded,
   address = {
-    streetAddress: 'Danyore',
-    addressLocality: 'Gilgit',
-    addressRegion: 'Gilgit-Baltistan',
-    postalCode: '15100',
-    addressCountry: 'PK',
+    streetAddress: SITE.location.streetAddress,
+    addressLocality: SITE.location.city,
+    addressRegion: SITE.location.region,
+    postalCode: SITE.location.postalCode,
+    addressCountry: SITE.location.countryCode,
   },
-  socialLinks = [
-    'https://twitter.com/studiodesign',
-    'https://linkedin.com/company/studiodesign',
-    'https://dribbble.com/studiodesign',
-    'https://instagram.com/studiodesign',
-  ],
+  socialLinks = sameAs,
 }: OrganizationSchemaProps) => {
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     name,
+    legalName: SITE.legalName,
     url,
     logo,
+    image: logo,
     description,
     email,
+    telephone,
+    foundingDate,
     address: {
       '@type': 'PostalAddress',
       ...address,
     },
+    areaServed: ['Pakistan', 'Worldwide'],
+    knowsAbout: SITE.services,
     sameAs: socialLinks,
     contactPoint: {
       '@type': 'ContactPoint',
+      telephone,
       email,
-      contactType: 'customer service',
-      areaServed: 'Worldwide',
-      availableLanguage: ['English'],
+      contactType: 'sales',
+      areaServed: ['PK', 'Worldwide'],
+      availableLanguage: ['English', 'Urdu'],
     },
   };
 
@@ -96,7 +118,6 @@ export const OrganizationSchema = ({
   );
 };
 
-// Article Schema - for blog posts
 export const ArticleSchema = ({
   headline,
   description,
@@ -105,7 +126,7 @@ export const ArticleSchema = ({
   dateModified,
   author,
   publisher = {
-    name: SITE.name,
+    name: SITE.fullName,
     logo: `${SITE.url}${SITE.logo}`,
   },
 }: ArticleSchemaProps) => {
@@ -132,7 +153,7 @@ export const ArticleSchema = ({
     },
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': window.location.href,
+      '@id': typeof window !== 'undefined' ? window.location.href : SITE.url,
     },
   };
 
@@ -143,13 +164,12 @@ export const ArticleSchema = ({
   );
 };
 
-// Service Schema - for services page
 export const ServiceSchema = ({
   name,
   description,
-  provider = SITE.name,
+  provider = SITE.fullName,
   areaServed = 'Worldwide',
-  priceRange = '$$$$',
+  priceRange = '$$',
 }: ServiceSchemaProps) => {
   const schema = {
     '@context': 'https://schema.org',
@@ -159,9 +179,14 @@ export const ServiceSchema = ({
     provider: {
       '@type': 'Organization',
       name: provider,
+      url: SITE.url,
     },
     areaServed,
     priceRange,
+    availableChannel: {
+      '@type': 'ServiceChannel',
+      serviceUrl: `${SITE.url}/contact`,
+    },
   };
 
   return (
@@ -171,7 +196,6 @@ export const ServiceSchema = ({
   );
 };
 
-// Breadcrumb Schema
 export const BreadcrumbSchema = ({ items }: { items: BreadcrumbItem[] }) => {
   const schema = {
     '@context': 'https://schema.org',
@@ -191,18 +215,19 @@ export const BreadcrumbSchema = ({ items }: { items: BreadcrumbItem[] }) => {
   );
 };
 
-// WebSite Schema with SearchAction
 export const WebsiteSchema = () => {
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    name: SITE.name,
+    name: SITE.fullName,
+    alternateName: SITE.name,
     url: SITE.url,
     description: SITE.description,
-    potentialAction: {
-      '@type': 'SearchAction',
-      target: `${SITE.url}/search?q={search_term_string}`,
-      'query-input': 'required name=search_term_string',
+    inLanguage: 'en',
+    publisher: {
+      '@type': 'Organization',
+      name: SITE.fullName,
+      logo: `${SITE.url}${SITE.logo}`,
     },
   };
 
@@ -213,41 +238,78 @@ export const WebsiteSchema = () => {
   );
 };
 
-// Professional Service Schema - for agency homepage
-export const ProfessionalServiceSchema = () => {
+export const LocalBusinessSchema = () => {
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'ProfessionalService',
     name: SITE.fullName,
+    alternateName: SITE.name,
     image: `${SITE.url}${SITE.logo}`,
     '@id': SITE.url,
     url: SITE.url,
-    telephone: '+92-355-4475474',
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: 'Danyore',
-      addressLocality: 'Gilgit',
-      addressRegion: 'Gilgit-Baltistan',
-      postalCode: '15100',
-      addressCountry: 'PK',
-    },
-    geo: {
-      '@type': 'GeoCoordinates',
-      latitude: 35.918,
-      longitude: 74.308,
-    },
+    description: SITE.description,
+    telephone: SITE.contact.phone,
+    email: SITE.contact.email,
+    priceRange: '$$',
+    address: postalAddress,
+    geo: geoCoordinates,
+    areaServed: [
+      {
+        '@type': 'City',
+        name: SITE.location.city,
+      },
+      {
+        '@type': 'Country',
+        name: SITE.location.country,
+      },
+      'Worldwide',
+    ],
     openingHoursSpecification: {
       '@type': 'OpeningHoursSpecification',
-      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
       opens: '09:00',
       closes: '18:00',
     },
-    priceRange: '$$$$',
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.9',
-      reviewCount: '127',
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Freelancing Services',
+      itemListElement: SITE.services.map((service, index) => ({
+        '@type': 'Offer',
+        position: index + 1,
+        itemOffered: {
+          '@type': 'Service',
+          name: service,
+          provider: {
+            '@type': 'Organization',
+            name: SITE.fullName,
+          },
+        },
+      })),
     },
+  };
+
+  return (
+    <Helmet>
+      <script type="application/ld+json">{JSON.stringify(schema)}</script>
+    </Helmet>
+  );
+};
+
+/** @deprecated Use LocalBusinessSchema — kept as alias for existing imports */
+export const ProfessionalServiceSchema = LocalBusinessSchema;
+
+export const ServicesListSchema = () => {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'Core Elite Experts Freelancing Services',
+    description: 'Freelancing and digital services offered from Gilgit, Pakistan.',
+    itemListElement: SITE.services.map((service, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: service,
+      url: `${SITE.url}/services`,
+    })),
   };
 
   return (
