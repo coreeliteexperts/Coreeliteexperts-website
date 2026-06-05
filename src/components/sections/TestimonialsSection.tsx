@@ -30,7 +30,12 @@ const testimonials = [
   },
 ];
 
-const clients = ['LUMINARY', 'ETHEREAL', 'ZENITH', 'CASCADE', 'AURORA', 'NEXUS'];
+const clients = [
+  { name: 'BeeNeural', logo: '/beeneural.png' },
+  { name: 'ITC DANYORE', logo: '/itc-danyore.png' },
+  { name: 'sheRozgar', logo: '/sherozgar.png' },
+  { name: 'she dev', logo: '/she-dev.png' },
+];
 
 export const TestimonialsSection = () => {
   const ref = useRef(null);
@@ -201,22 +206,28 @@ export const TestimonialsSection = () => {
             <div className="flex-1 h-px bg-border/50 ml-8" />
           </div>
 
-          <div className="relative overflow-hidden">
-            <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-secondary/30 to-transparent z-10" />
-            <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-secondary/30 to-transparent z-10" />
-            
+          <div className="relative overflow-hidden rounded-2xl bg-[#f2f4f5] border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.12)] py-8 md:py-10">
+            <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-[#f2f4f5] to-transparent z-10" />
+            <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-[#f2f4f5] to-transparent z-10" />
+
             <motion.div
               animate={{ x: ['0%', '-50%'] }}
               transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
-              className="flex gap-16 whitespace-nowrap py-4"
+              className="flex gap-16 md:gap-20 whitespace-nowrap"
             >
               {[...clients, ...clients].map((client, index) => (
-                <span
-                  key={index}
-                  className="text-xl font-syne font-bold text-muted-foreground/40 hover:text-foreground transition-colors duration-300 cursor-default"
+                <div
+                  key={`${client.name}-${index}`}
+                  className="flex items-center justify-center px-4"
                 >
-                  {client}
-                </span>
+                  <img
+                    src={client.logo}
+                    alt={`${client.name} logo`}
+                    className="h-10 md:h-14 w-auto max-w-[200px] object-contain"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
               ))}
             </motion.div>
           </div>
