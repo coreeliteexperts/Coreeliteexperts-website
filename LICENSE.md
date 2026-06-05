@@ -1,173 +1,158 @@
 # License Agreement
 
-## STUDIO Creative Hub - React Template
+## Core Elite Experts Website Application
 
-**Version:** 1.0  
-**Author:** Lutte Studio  
-**Email:** luttestudio28@gmail.com  
-**Marketplace:** UI8.net
-
----
-
-## License Types
-
-### 1. Personal License
-
-A single license for personal use.
-
-**What you can do:**
-- Use it for 1 personal project
-- Modify and customize however you want
-- Mix it with other stuff to create something new
-
-**What you can't do:**
-- Use it for multiple projects (buy another license)
-- Resell, share, or give it away
-- Let users customize the template themselves
-- Use it for print-on-demand or made-to-order stuff
-- Build a SaaS product with it
-- Say you made this from scratch
+**Application:** CEE — Core Elite Experts corporate website  
+**Company:** Core Elite Experts (Private) Limited  
+**Website:** https://coreeliteexperts.com  
+**Version:** 1.0
 
 ---
 
-### 2. Commercial License
+## Copyright
 
-For freelancers, agencies, and businesses.
+© 2024–2026 Core Elite Experts (Private) Limited. All rights reserved.
 
-**What you can do:**
-- Use it for unlimited projects (personal & client work)
-- Customize everything
-- Build websites for your clients
-- Create free or paid products
-
-**What you can't do:**
-- Resell or redistribute the template
-- Upload it to other marketplaces or template libraries
-- Let end users customize the template
-- Use it for print-on-demand services
-- Build a SaaS without Extended License
-- Claim you designed this
+This repository contains the source code for the Core Elite Experts (CEE) public website, including marketing pages, service information, blog content, team profiles, and related frontend assets.
 
 ---
 
-### 3. Extended License
+## Ownership
 
-Need to use this for a SaaS app, a product with multiple users, or something more complex?
+All custom application code, branding, copy, layout customizations, configuration, and company-specific assets in this project are owned by **Core Elite Experts (Private) Limited**, unless otherwise noted below.
 
-**Drop me an email:** luttestudio28@gmail.com
-
-Let's chat about your project and I'll sort out a fair price.
+You are **not** granted ownership of this application by accessing or viewing this repository.
 
 ---
 
-### 4. Enterprise License
+## Permitted Use
 
-Big team? Large-scale deployment? Need priority support or custom modifications?
+This application is intended for use by **Core Elite Experts (Private) Limited** and its authorized team members, contractors, and deployment systems for:
 
-**Get in touch:** luttestudio28@gmail.com
-
-I work with companies to figure out what works best - custom terms, dedicated support, whatever you need.
-
----
-
-## The Fine Print
-
-### Ownership
-You're buying a license to use this, not the template itself. I still own it, but you can use it under these terms.
-
-### Credits
-Not required, but appreciated! If you want to give a shoutout:
-```
-Built with STUDIO by Lutte Studio
-```
-
-### Support
-You get 6 months of support - bug fixes, updates, and help with the docs
-
-### Refunds
-Digital products are tricky. Refunds follow UI8's policy, so check their terms before buying.
-
-### Updates
-Free updates forever. If there's a major new version, you might get a discount to upgrade.
+- Operating the official website at https://coreeliteexperts.com
+- Maintaining, updating, and improving the application
+- Deploying builds to approved production and staging environments
+- Internal development, testing, and quality assurance
 
 ---
 
-## What You Get
+## Restrictions
+
+Unless you have written permission from Core Elite Experts (Private) Limited, you may **not**:
+
+- Copy, redistribute, sublicense, or resell this application or substantial portions of it
+- Publish the source code publicly without authorization
+- Use the CEE name, logo, branding, or website content for unrelated products or services
+- Remove copyright, license, or attribution notices where required
+- Use this codebase to create a competing template, marketplace product, or white-label resale offering
+- Deploy this application to domains or environments not approved by the company
+
+---
+
+## Application Scope
+
+This project is a single-page application (SPA) built for the Core Elite Experts corporate website. It includes:
 
 ```
-lumina-creative-hub/
+Coreeliteexperts-website/
 ├── src/
-│   ├── components/      # All React components
-│   ├── pages/           # Page templates
-│   ├── data/            # Sample data
-│   ├── hooks/           # Custom hooks
-│   ├── assets/          # Images & files
-│   └── index.css        # Styles
-├── public/              # Static assets
-├── docs/
-│   └── EDITING_GUIDE.md # How to edit stuff
+│   ├── components/      # UI, layout, and section components
+│   ├── pages/           # Route pages (Home, About, Services, Blog, Contact, etc.)
+│   ├── data/            # Blog posts, projects, and site content
+│   ├── config/          # Site-wide branding and metadata
+│   ├── hooks/           # Custom React hooks
+│   ├── lib/             # Shared utilities
+│   └── index.css        # Global styles
+├── public/              # Static assets (images, icons, favicon, sitemap, robots.txt)
+├── index.html           # Application entry point
+├── vercel.json          # Deployment and security headers
 ├── package.json
 ├── tailwind.config.ts
 ├── vite.config.ts
 └── README.md
 ```
 
+### Main Routes
+
+- `/` — Home
+- `/about` — About the company and team
+- `/services` — Service offerings
+- `/work` — Projects and case studies
+- `/blog` — Articles and insights
+- `/contact` — Contact information
+- `/privacy-policy` — Privacy policy
+- `/terms-of-service` — Terms of service
+
 ---
 
 ## Built With
 
-- React 18 + TypeScript
+- React 18
+- TypeScript
 - Vite
 - Tailwind CSS
 - Framer Motion
 - React Router v6
+- TanStack Query
 - Lucide Icons
 - shadcn/ui
+- React Helmet Async
 
 ---
 
-## About the Demo Content
+## Third-Party Software
+
+This application depends on open-source packages listed in `package.json` and `package-lock.json`. Those packages are subject to their own licenses, including MIT and other permissive open-source terms.
+
+Use of this application does **not** transfer ownership of any third-party dependency.
+
+---
+
+## Third-Party Content
 
 ### Images
-Demo images are from Unsplash (free to use). Swap them out with your own for production.
+
+Some demo or placeholder imagery may reference third-party sources such as Unsplash. Company team photos, logos, and branded assets in `public/` are intended for use on the Core Elite Experts website only.
 
 ### Fonts
-- Syne - Google Fonts (free)
-- Inter - Google Fonts (free)
+
+- **Inter** — SIL Open Font License
+- **Syne** — SIL Open Font License
 
 ### Icons
-Lucide Icons - open source, free to use.
+
+- **Lucide Icons** — ISC License
 
 ---
 
-## Don't Use This For
+## Deployment
 
-- Anything illegal or sketchy
-- Adult/NSFW content
-- Gambling sites (unless you get Extended License)
-- Making a competing template to sell
-- NFT stuff without asking first
+The production application is deployed for Core Elite Experts at:
+
+**https://coreeliteexperts.com**
+
+Client-side routing requires SPA rewrite configuration in `vercel.json` so direct links and page refreshes work correctly on sub-routes.
 
 ---
 
 ## Disclaimer
 
-This template comes as-is. I've done my best to make it solid, but I'm not responsible if something breaks on your end. Use it wisely.
+This software is provided for use by Core Elite Experts (Private) Limited and authorized parties only. It is supplied on an **“as is”** basis without warranties of any kind, whether express or implied, including but not limited to merchantability, fitness for a particular purpose, and non-infringement.
+
+Core Elite Experts (Private) Limited is not liable for damages arising from unauthorized use, modification, or deployment of this application.
 
 ---
 
-## Questions?
+## Contact
 
-📧 luttestudio28@gmail.com
+For licensing, permissions, or legal questions regarding this application:
 
-Happy to help with licensing questions or anything else.
-
----
-
-By buying this, you agree to these terms. If you don't agree, don't buy it. Simple.
+**Core Elite Experts (Private) Limited**  
+Website: https://coreeliteexperts.com  
+Contact page: https://coreeliteexperts.com/contact
 
 ---
 
-**Last updated:** December 2025
+**Last updated:** June 2026
 
-© 2025 Lutte Studio
+© 2024–2026 Core Elite Experts (Private) Limited

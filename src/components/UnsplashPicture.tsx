@@ -10,6 +10,7 @@ type UnsplashPictureProps = {
   widths?: number[];
   sizes: string;
   className?: string;
+  imagePosition?: string;
   loading?: 'lazy' | 'eager';
   fetchPriority?: 'high' | 'low' | 'auto';
 };
@@ -22,15 +23,19 @@ export function UnsplashPicture({
   widths = DEFAULT_WIDTHS,
   sizes,
   className,
+  imagePosition,
   loading = 'lazy',
   fetchPriority,
 }: UnsplashPictureProps) {
+  const positionStyle = imagePosition ? { objectPosition: imagePosition } : undefined;
+
   if (!isUnsplashUrl(src)) {
     return (
       <img
         src={src}
         alt={alt}
         className={className}
+        style={positionStyle}
         loading={loading}
         decoding="async"
         {...(fetchPriority ? { fetchPriority } : {})}
@@ -56,6 +61,7 @@ export function UnsplashPicture({
         src={optimizeUnsplashUrl(src, { width: fallbackW })}
         alt={alt}
         className={className}
+        style={positionStyle}
         loading={loading}
         decoding="async"
         sizes={sizes}
