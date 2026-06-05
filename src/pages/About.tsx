@@ -9,39 +9,40 @@ import { UnsplashPicture } from '@/components/UnsplashPicture';
 
 const teamMembers = [
   {
-    name: 'Alexandra Chen',
-    role: 'Founder & Creative Director',
-    image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=600&q=80',
-    bio: 'Former design lead at Google with 15+ years shaping digital experiences.',
+    name: 'Tosif Sheraz',
+    role: 'CEO',
+    image: '/tosif.jpeg',
+    bio: 'Drives the strategic vision, revenue growth, and operational execution of the business.',
     linkedin: '#',
     twitter: '#',
     number: '01',
   },
   {
-    name: 'Marcus Williams',
-    role: 'Head of Strategy',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80',
-    bio: 'Brand strategist who has worked with Fortune 500 companies worldwide.',
-    linkedin: '#',
-    twitter: '#',
+    name: 'Kamran Khan',
+    role: 'Founder and DevOps Lead',
+    image: '/kamran.png',
+    bio: 'Full Stack Developer and DevOps Engineer building scalable systems and reliable cloud infrastructure.',
+    linkedin: 'https://www.linkedin.com/in/kamran-khan-4a3908219/',
+    upwork: 'https://www.upwork.com/freelancers/~0146a5dff31ea9e1dd?mp_source=share',
     number: '02',
   },
   {
-    name: 'Sofia Rodriguez',
-    role: 'Lead Designer',
-    image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=600&q=80',
-    bio: 'Award-winning designer specializing in brand identity and digital products.',
+    name: 'Noor-ul-Mubeen',
+    role: 'CTO & DevOps Engineer',
+    image: '/mubeen.png',
+    bio: 'Leads technical strategy and DevOps operations, building reliable CI/CD pipelines, cloud infrastructure, and scalable deployment workflows.',
     linkedin: '#',
     twitter: '#',
     number: '03',
   },
   {
-    name: 'James Park',
-    role: 'Technical Director',
-    image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80',
-    bio: 'Full-stack architect with a passion for performant, accessible web experiences.',
-    linkedin: '#',
-    twitter: '#',
+    name: 'Asif Ali',
+    role: 'Bookkeeping Lead',
+    image: '/asif.jpeg',
+    imagePosition: '35% center',
+    bio: 'Manages day-to-day bookkeeping, reconciliations, and financial reporting to keep records accurate, organized, and compliant.',
+    linkedin: 'https://www.linkedin.com/in/asif-alibookkeeper/',
+    upwork: 'https://www.upwork.com/freelancers/~0151ad6431951e1ed9',
     number: '04',
   },
   {
@@ -327,6 +328,7 @@ const About = () => {
                         widths={[280, 360, 480, 720]}
                         sizes="(max-width: 768px) 280px, 360px"
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                        imagePosition={member.imagePosition}
                         loading="lazy"
                       />
                       {/* Gradient Overlay */}
@@ -346,12 +348,40 @@ const About = () => {
                         
                         {/* Social Links */}
                         <div className="flex gap-3 mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-150">
-                          <a href={member.linkedin} className="text-white hover:text-accent transition-colors">
+                          <a
+                            href={member.linkedin}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-white hover:text-accent transition-colors"
+                            aria-label={`${member.name} on LinkedIn`}
+                          >
                             <Linkedin className="w-5 h-5" />
                           </a>
-                          <a href={member.twitter} className="text-white hover:text-accent transition-colors">
-                            <Twitter className="w-5 h-5" />
-                          </a>
+                          {member.upwork ? (
+                            <a
+                              href={member.upwork}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-white hover:text-accent transition-colors"
+                              aria-label={`${member.name} on Upwork`}
+                            >
+                              <img
+                                src="/upwork-icon.png"
+                                alt=""
+                                className="w-5 h-5 brightness-0 invert opacity-90 hover:opacity-100 transition-opacity"
+                              />
+                            </a>
+                          ) : (
+                            <a
+                              href={member.twitter}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-white hover:text-accent transition-colors"
+                              aria-label={`${member.name} on Twitter`}
+                            >
+                              <Twitter className="w-5 h-5" />
+                            </a>
+                          )}
                         </div>
                       </div>
 
