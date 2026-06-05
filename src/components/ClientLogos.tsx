@@ -2,12 +2,10 @@ import { motion, useMotionValue, useSpring } from 'framer-motion';
 import { useState, useEffect } from 'react';
 
 const clients = [
-  { name: 'Google', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/368px-Google_2015_logo.svg.png' },
-  { name: 'Microsoft', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Microsoft_logo_%282012%29.svg/512px-Microsoft_logo_%282012%29.svg.png' },
-  { name: 'Apple', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/202px-Apple_logo_black.svg.png' },
-  { name: 'Meta', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Meta_Platforms_Inc._logo.svg/512px-Meta_Platforms_Inc._logo.svg.png' },
-  { name: 'Amazon', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/603px-Amazon_logo.svg.png' },
-  { name: 'Netflix', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/400px-Netflix_2015_logo.svg.png' },
+  { name: 'BeeNeural', logo: '/beeneural.png' },
+  { name: 'ITC DANYORE', logo: '/itc-danyore.png' },
+  { name: 'sheRozgar', logo: '/sherozgar.png' },
+  { name: 'she dev', logo: '/she-dev.png' },
 ];
 
 interface ClientLogosProps {
@@ -113,7 +111,7 @@ const ClientLogos = ({ title = 'Trusted by industry leaders', className = '' }: 
               <img
                 src={client.logo}
                 alt={`${client.name} logo`}
-                className="h-6 md:h-8 w-auto object-contain opacity-40 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-500"
+                className="h-8 md:h-10 w-auto max-w-[160px] object-contain opacity-70 group-hover:opacity-100 transition-all duration-500"
               />
               
               {/* Client name tooltip */}
